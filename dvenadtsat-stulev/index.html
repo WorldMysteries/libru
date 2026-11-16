@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Двенадцать стульев — Многостраничная HTML-книга</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Двенадцать стульев</a>
+      <nav class="top-links">
+        <a href="index.html" class="active">Титул и оглавление</a>
+        <a href="stul-01.html">Читать с начала</a>
+        <a href="geroi.html">Герои и места</a>
+      </nav>
+      <div class="toolbar-group">
+        <button type="button" class="ctrl-btn" data-set-theme="paper">Бумага</button>
+        <button type="button" class="ctrl-btn" data-set-theme="sepia">Сепия</button>
+        <button type="button" class="ctrl-btn" data-set-theme="night">Ночь</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-wrap">
+    <section class="cover-hero">
+      <figure class="plate-frame" style="margin:0;">
+        <img src="images/cover.jpg" alt="Фронтиспис к роману Двенадцать стульев: резной ореховый стул мастера Гамбса, фуражка и шарф Остапа Бендера" />
+        <figcaption class="plate-caption">
+          <span>Фронтиспис издания</span>
+          <span>1927–1928</span>
+        </figcaption>
+      </figure>
+
+      <div class="cover-meta">
+        <div>
+          <p class="kicker">Илья Ильф и Евгений Петров</p>
+          <h1 class="cover-title">Двенадцать стульев</h1>
+          <p class="subtitle" style="margin-top:14px;">
+            Полное многостраничное HTML-издание: 14 связанных HTML-страниц с книжным разворотом,
+            лентой чтения, закладками и примечаниями. Работает автономно в любом браузере.
+          </p>
+          <blockquote class="epigraph">
+            <p>«Дело помощи утопающим — дело рук самих утопающих».</p>
+            <cite>— И. Ильф, Е. Петров. «Двенадцать стульев»</cite>
+          </blockquote>
+        </div>
+
+        <div>
+          <div class="cta-row">
+            <a href="stul-01.html" class="btn-primary">Начать чтение &rarr;</a>
+            <a href="#toc" class="btn-secondary">Перейти к оглавлению</a>
+            <a href="geroi.html" class="btn-secondary">Герои и места</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="savedBookmarksBox" style="display:none; padding: 28px 0; border-bottom: 1px solid var(--border);">
+      <h2>Ваши закладки</h2>
+      <div id="savedBookmarksList" class="toolbar-group"></div>
+    </section>
+
+    <section id="toc" style="padding-top: 36px;">
+      <p class="kicker">Содержание романа</p>
+      <h2 style="font-size:2.2rem;">Оглавление (12 разделов)</h2>
+
+      <div class="toc-tools">
+        <input id="tocSearch" class="search-input" type="search" placeholder="Поиск по названию, месту или части..." />
+        <div class="toolbar-group">
+          <button type="button" class="ctrl-btn active" data-part-filter="all">Весь роман</button>
+          <button type="button" class="ctrl-btn" data-part-filter="1">Часть первая · Старгородский лев</button>
+          <button type="button" class="ctrl-btn" data-part-filter="2">Часть вторая · В Москве</button>
+          <button type="button" class="ctrl-btn" data-part-filter="3">Часть третья · Сокровище мадам Петуховой</button>
+        </div>
+      </div>
+      
+      <h3 style="font-family:Cormorant Garamond,serif;font-size:1.5rem;margin:30px 0 10px;">Часть первая · Старгородский лев</h3>
+      <ul class="toc-list">
+        <li data-toc-item data-part="1"><a href="stul-01.html"><span class="toc-num">Часть I, гл. I–III</span><span class="toc-title">Уездный город N и тайна Клавдии Ивановны</span><span class="toc-loc">Уездный город N</span></a></li>
+        <li data-toc-item data-part="1"><a href="stul-02.html"><span class="toc-num">Часть I, гл. IV–V</span><span class="toc-title">Великий комбинатор</span><span class="toc-loc">Старгород · Дворницкая дома № 7</span></a></li>
+        <li data-toc-item data-part="1"><a href="stul-03.html"><span class="toc-num">Часть I, гл. VI–VIII</span><span class="toc-title">Брильянтовый дым и «голубой воришка»</span><span class="toc-loc">Старгород · 2-й дом Старсобеса</span></a></li>
+        <li data-toc-item data-part="1"><a href="stul-04.html"><span class="toc-num">Часть I, гл. IX–XI</span><span class="toc-title">Архивариус, Полесов и «Меч и орало»</span><span class="toc-loc">Старгород · Кооперативная улица</span></a></li>
+        <li data-toc-item data-part="1"><a href="stul-05.html"><span class="toc-num">Часть I, гл. XII–XIV</span><span class="toc-title">Знойная женщина и путь в столицу</span><span class="toc-loc">Старгород · Бакалейная лавка и вокзал</span></a></li>
+      </ul>
+
+      <h3 style="font-family:Cormorant Garamond,serif;font-size:1.5rem;margin:30px 0 10px;">Часть вторая · В Москве</h3>
+      <ul class="toc-list">
+        <li data-toc-item data-part="2"><a href="stul-06.html"><span class="toc-num">Часть II, гл. XV–XVIII</span><span class="toc-title">Общежитие Бертольда Шварца и музей мебели</span><span class="toc-loc">Москва · Сивцев Вражек и Арбат</span></a></li>
+        <li data-toc-item data-part="2"><a href="stul-07.html"><span class="toc-num">Часть II, гл. XIX–XXII</span><span class="toc-title">Эллочка-людоедка и война с Вандербильдихой</span><span class="toc-loc">Москва · Варсонофьевский переулок</span></a></li>
+        <li data-toc-item data-part="2"><a href="stul-08.html"><span class="toc-num">Часть II, гл. XXIII–XXV</span><span class="toc-title">Инженер Щукин, Изнуренков и крах на аукционе</span><span class="toc-loc">Москва · Петровка и Сретенка</span></a></li>
+        <li data-toc-item data-part="2"><a href="stul-09.html"><span class="toc-num">Часть II, гл. XXVI–XXIX</span><span class="toc-title">Следы по стране и отплытие в Поволжье</span><span class="toc-loc">Москва · Редакция газеты «Станок» и вокзал</span></a></li>
+      </ul>
+
+      <h3 style="font-family:Cormorant Garamond,serif;font-size:1.5rem;margin:30px 0 10px;">Часть третья · Сокровище мадам Петуховой</h3>
+      <ul class="toc-list">
+        <li data-toc-item data-part="3"><a href="stul-10.html"><span class="toc-num">Часть III, гл. XXX–XXXIII</span><span class="toc-title">Межпланетный шахматный конгресс в Васюках</span><span class="toc-loc">Река Волга · Село Васюки</span></a></li>
+        <li data-toc-item data-part="3"><a href="stul-11.html"><span class="toc-num">Часть III, гл. XXXIV–XXXVIII</span><span class="toc-title">Пятигорск, Кавказ и отец Федор на скале</span><span class="toc-loc">Пятигорск · Военно-Грузинская дорога · Ялта</span></a></li>
+        <li data-toc-item data-part="3"><a href="stul-12.html"><span class="toc-num">Часть III, гл. XXXIX–XL</span><span class="toc-title">Двенадцатый стул и финал концессии</span><span class="toc-loc">Москва · Каланчевская площадь</span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <span>Илья Ильф и Евгений Петров · «Двенадцать стульев» · Чистое HTML-издание</span>
+      <span><a href="stul-01.html">Первая глава</a> · <a href="geroi.html">Герои и места</a></span>
+    </div>
+  </footer>
+
+  <script src="book.js"></script>
+</body>
+</html>

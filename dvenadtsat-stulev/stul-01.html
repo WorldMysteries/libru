@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Часть I, гл. I–III. Уездный город N и тайна Клавдии Ивановны — Двенадцать стульев</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="mode-spread">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Двенадцать стульев</a>
+      <nav class="top-links">
+        <a href="index.html">Оглавление</a>
+        <a href="stul-01.html" class="active">Читать книгу</a>
+        <a href="geroi.html">Герои и места</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="reader-toolbar">
+    <div class="reader-toolbar-inner">
+      <div class="toolbar-group">
+        <select id="chapterSelect" class="ctrl-select" aria-label="Перейти к главе"><option value="stul-01.html" selected>Часть I, гл. I–III. Уездный город N и тайна Клавдии Ивановны</option><option value="stul-02.html">Часть I, гл. IV–V. Великий комбинатор</option><option value="stul-03.html">Часть I, гл. VI–VIII. Брильянтовый дым и «голубой воришка»</option><option value="stul-04.html">Часть I, гл. IX–XI. Архивариус, Полесов и «Меч и орало»</option><option value="stul-05.html">Часть I, гл. XII–XIV. Знойная женщина и путь в столицу</option><option value="stul-06.html">Часть II, гл. XV–XVIII. Общежитие Бертольда Шварца и музей мебели</option><option value="stul-07.html">Часть II, гл. XIX–XXII. Эллочка-людоедка и война с Вандербильдихой</option><option value="stul-08.html">Часть II, гл. XXIII–XXV. Инженер Щукин, Изнуренков и крах на аукционе</option><option value="stul-09.html">Часть II, гл. XXVI–XXIX. Следы по стране и отплытие в Поволжье</option><option value="stul-10.html">Часть III, гл. XXX–XXXIII. Межпланетный шахматный конгресс в Васюках</option><option value="stul-11.html">Часть III, гл. XXXIV–XXXVIII. Пятигорск, Кавказ и отец Федор на скале</option><option value="stul-12.html">Часть III, гл. XXXIX–XL. Двенадцатый стул и финал концессии</option></select>
+        <button type="button" id="bookmarkBtn" class="ctrl-btn" data-slug="stul-01" data-title="Часть I, гл. I–III. Уездный город N и тайна Клавдии Ивановны">Закладка</button>
+      </div>
+
+      <div class="toolbar-group">
+        <button type="button" class="ctrl-btn" data-set-mode="spread">Книжный разворот</button>
+        <button type="button" class="ctrl-btn" data-set-mode="scroll">Лента</button>
+      </div>
+
+      <div class="toolbar-group">
+        <button type="button" id="fontDec" class="ctrl-btn" title="Уменьшить шрифт">А−</button>
+        <span id="fontSizeLabel" class="page-index" style="padding:0 4px;">18 px</span>
+        <button type="button" id="fontInc" class="ctrl-btn" title="Увеличить шрифт">А+</button>
+        <button type="button" class="ctrl-btn" data-set-theme="paper">Бумага</button>
+        <button type="button" class="ctrl-btn" data-set-theme="sepia">Сепия</button>
+        <button type="button" class="ctrl-btn" data-set-theme="night">Ночь</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="main-wrap">
+    <!-- Open Book Spread Mode -->
+    <section
+      id="spreadContainer"
+      class="spread-container"
+      data-book-label="Илья Ильф и Евгений Петров · Двенадцать стульев"
+      data-chapter-title="Уездный город N и тайна Клавдии Ивановны"
+      data-chapter-roman="Часть I, гл. I–III"
+      data-chapter-part="Часть первая · Старгородский лев"
+      data-chapter-location="Уездный город N"
+      data-prev-href="index.html"
+      data-next-href="stul-02.html"
+    >
+      <div class="spread-book">
+        <div id="spreadLeft" class="spread-page left"></div>
+        <div id="spreadRight" class="spread-page right"></div>
+      </div>
+      <div class="spread-controls">
+        <button type="button" id="spreadPrev" class="ctrl-btn">&larr; Предыдущая страница</button>
+        <span id="spreadIndicator" class="page-index"></span>
+        <button type="button" id="spreadNext" class="ctrl-btn active">Следующая страница &rarr;</button>
+      </div>
+    </section>
+
+    <!-- Comfortable Continuous Scroll Mode -->
+    <article class="book-sheet is-chapter-sheet">
+      <div class="kicker">Часть первая · Старгородский лев · Часть I, гл. I–III · Уездный город N</div>
+      <h1>Уездный город N и тайна Клавдии Ивановны</h1>
+      <p class="subtitle">Тихая служба Ипполита Матвеевича в загсе и предсмертная исповедь о брильянтах</p>
+      <hr class="hairline" />
+      <blockquote id="chapterEpigraphSource" class="epigraph"><p>«Дело помощи утопающим — дело рук самих утопающих».</p><cite>— И. Ильф, Е. Петров. «Двенадцать стульев»</cite></blockquote>
+      
+      <div id="chapterSourceProse" class="prose">
+        <p class="dropcap">В уездном городе N было так много парикмахерских заведений и бюро похоронных процессий, что казалось, жители города рождаются лишь затем, чтобы побриться, остричься, освежить голову вежеталем и сразу же умереть. А на самом деле в уездном городе N люди рождались, брились и умирали довольно редко. Жизнь города N была тишайшей.</p>
+      <p>Среди этого спокойствия жил пятидесятидвухлетний делопроизводитель загса Ипполит Матвеевич Воробьянинов — человек высокого роста, с золотым пенсне и прошлым старгородского предводителя дворянства. Вся его тихая размеренная жизнь перевернулась в один апрельский вечер, когда умирающая теща Клавдия Ивановна Петухова попросила закрыть двери и открыла страшную семейную тайну.</p>
+      <p>Оказалось, что в тревожный восемнадцатый год, перед самым бегством из Старгорода, покойная зашила все свои брильянты и жемчуга на сумму в сто пятьдесят тысяч золотых рублей в сиденье одного из двенадцати ореховых гостиных стульев работы знаменитого мастера Гамбса, обшитых английским ситцем в цветочек.</p>
+      <p>Но теща совершила роковую оплошность: на исповеди она проговорилась об этом же сокровище приходскому священнику церкви Фрола и Лавра — отцу Федору Вострикову. Не прошло и часа, как благообразный батюшка, с детства мечтавший о собственном свечном заводике, сбрил шелковистую бороду, купил дорожный саквояж и тайно двинулся в Старгород наперегонки с бывшим предводителем дворянства.</p>
+      </div>
+      <aside class="annotations">
+      <h2>Примечания к главе</h2>
+      <dl>
+        <dt>Мастер Гамбс</dt><dd>Генрих Гамбс (1765–1831) — знаменитый петербургский мебельщик немецкого происхождения, чьи гарнитуры ценились в дореволюционной России за прочность и изящество.</dd>
+        <dt>Отец Федор</dt><dd>Комический антагонист концессионеров, чья лихорадочная погоня за мифическим свечным заводом идет параллельно маршруту Бендера и Кисы.</dd>
+      </dl>
+    </aside>
+      <nav class="chapter-pager">
+        <a class="nav-btn prev-link" href="index.html">&larr; Оглавление</a>
+        <span class="page-index">1 / 12</span>
+        <a class="nav-btn next-link" href="stul-02.html">Часть I, гл. IV–V: Великий комбинатор &rarr;</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <span>Илья Ильф и Евгений Петров · «Двенадцать стульев» · Многостраничное HTML-издание</span>
+      <span><a href="index.html">Оглавление</a> · <a href="geroi.html">Герои и места</a></span>
+    </div>
+  </footer>
+
+  <script src="book.js"></script>
+</body>
+</html>

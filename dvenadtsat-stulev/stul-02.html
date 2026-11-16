@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Часть I, гл. IV–V. Великий комбинатор — Двенадцать стульев</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="mode-spread">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Двенадцать стульев</a>
+      <nav class="top-links">
+        <a href="index.html">Оглавление</a>
+        <a href="stul-01.html" class="active">Читать книгу</a>
+        <a href="geroi.html">Герои и места</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="reader-toolbar">
+    <div class="reader-toolbar-inner">
+      <div class="toolbar-group">
+        <select id="chapterSelect" class="ctrl-select" aria-label="Перейти к главе"><option value="stul-01.html">Часть I, гл. I–III. Уездный город N и тайна Клавдии Ивановны</option><option value="stul-02.html" selected>Часть I, гл. IV–V. Великий комбинатор</option><option value="stul-03.html">Часть I, гл. VI–VIII. Брильянтовый дым и «голубой воришка»</option><option value="stul-04.html">Часть I, гл. IX–XI. Архивариус, Полесов и «Меч и орало»</option><option value="stul-05.html">Часть I, гл. XII–XIV. Знойная женщина и путь в столицу</option><option value="stul-06.html">Часть II, гл. XV–XVIII. Общежитие Бертольда Шварца и музей мебели</option><option value="stul-07.html">Часть II, гл. XIX–XXII. Эллочка-людоедка и война с Вандербильдихой</option><option value="stul-08.html">Часть II, гл. XXIII–XXV. Инженер Щукин, Изнуренков и крах на аукционе</option><option value="stul-09.html">Часть II, гл. XXVI–XXIX. Следы по стране и отплытие в Поволжье</option><option value="stul-10.html">Часть III, гл. XXX–XXXIII. Межпланетный шахматный конгресс в Васюках</option><option value="stul-11.html">Часть III, гл. XXXIV–XXXVIII. Пятигорск, Кавказ и отец Федор на скале</option><option value="stul-12.html">Часть III, гл. XXXIX–XL. Двенадцатый стул и финал концессии</option></select>
+        <button type="button" id="bookmarkBtn" class="ctrl-btn" data-slug="stul-02" data-title="Часть I, гл. IV–V. Великий комбинатор">Закладка</button>
+      </div>
+
+      <div class="toolbar-group">
+        <button type="button" class="ctrl-btn" data-set-mode="spread">Книжный разворот</button>
+        <button type="button" class="ctrl-btn" data-set-mode="scroll">Лента</button>
+      </div>
+
+      <div class="toolbar-group">
+        <button type="button" id="fontDec" class="ctrl-btn" title="Уменьшить шрифт">А−</button>
+        <span id="fontSizeLabel" class="page-index" style="padding:0 4px;">18 px</span>
+        <button type="button" id="fontInc" class="ctrl-btn" title="Увеличить шрифт">А+</button>
+        <button type="button" class="ctrl-btn" data-set-theme="paper">Бумага</button>
+        <button type="button" class="ctrl-btn" data-set-theme="sepia">Сепия</button>
+        <button type="button" class="ctrl-btn" data-set-theme="night">Ночь</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="main-wrap">
+    <!-- Open Book Spread Mode -->
+    <section
+      id="spreadContainer"
+      class="spread-container"
+      data-book-label="Илья Ильф и Евгений Петров · Двенадцать стульев"
+      data-chapter-title="Великий комбинатор"
+      data-chapter-roman="Часть I, гл. IV–V"
+      data-chapter-part="Часть первая · Старгородский лев"
+      data-chapter-location="Старгород · Дворницкая дома № 7"
+      data-prev-href="stul-01.html"
+      data-next-href="stul-03.html"
+    >
+      <div class="spread-book">
+        <div id="spreadLeft" class="spread-page left"></div>
+        <div id="spreadRight" class="spread-page right"></div>
+      </div>
+      <div class="spread-controls">
+        <button type="button" id="spreadPrev" class="ctrl-btn">&larr; Предыдущая страница</button>
+        <span id="spreadIndicator" class="page-index"></span>
+        <button type="button" id="spreadNext" class="ctrl-btn active">Следующая страница &rarr;</button>
+      </div>
+    </section>
+
+    <!-- Comfortable Continuous Scroll Mode -->
+    <article class="book-sheet is-chapter-sheet">
+      <div class="kicker">Часть первая · Старгородский лев · Часть I, гл. IV–V · Старгород · Дворницкая дома № 7</div>
+      <h1>Великий комбинатор</h1>
+      <p class="subtitle">Появление Остапа Бендера в Старгороде и договор концессии</p>
+      <hr class="hairline" />
+      
+      <figure id="chapterPlateSource" class="chapter-plate" data-src="images/stargorod.jpg" data-caption="Рис. 1 — Тихая уездная улица Старгорода в апрельский полдень">
+          <img src="images/stargorod.jpg" alt="Провинциальная российская улица 1920-х годов с булыжной мостовой, липами и извозчиком" />
+          <figcaption>Рис. 1 — Тихая уездная улица Старгорода в апрельский полдень</figcaption>
+        </figure>
+      <div id="chapterSourceProse" class="prose">
+        <p class="dropcap">В половине двенадцатого с северо-запада, со стороны деревни Чмаровки, в Старгород вошел молодой человек лет двадцати восьми. За ним бежал беспризорный. «Дядя! — весело кричал мальчик. — Дай десять копеек!» Молодой человек вынул из кармана наливное яблоко и подал его беспризорному, но тот не отставал. Тогда пешеход остановился, иронически посмотрел на мальчика и тихо сказал: «Может быть, тебе дать еще ключ от квартиры, где деньги лежат?»</p>
+      <p>Одет новый гость был смело: в зеленый в талию костюм, без сорочки — на шее повязан старый шерстяной шарф, а в руке — астролябия, купленная за три рубля на барахолке. Звали его Остап Ибрагимович Бендер, и вся его бурная жизнь состояла из четырехсот сравнительно честных способов отъема денег у граждан.</p>
+      <p>В тот же вечер в дворницкой бывшего воробьяниновского особняка, где теперь помещался 2-й дом Старсобеса, судьба свела Остапа с растерянным Ипполитом Матвеевичем. Узнав про гамбсовский гарнитур, Бендер мгновенно оценил масштаб предприятия, взял руководство в свои руки, выговорил себе сорок процентов с найденных сокровищ и провозгласил: «Лед тронулся, господа присяжные заседатели! Командовать парадом буду я!»</p>
+      </div>
+      <aside class="annotations">
+      <h2>Примечания к главе</h2>
+      <dl>
+        <dt>Остап Бендер</dt><dd>Один из самых обаятельных трикстеров мировой литературы XX века, чьи крылатые фразы мгновенно вошли в живую русскую речь.</dd>
+      </dl>
+    </aside>
+      <nav class="chapter-pager">
+        <a class="nav-btn prev-link" href="stul-01.html">&larr; Часть I, гл. I–III: Уездный город N и тайна Клавдии Ивановны</a>
+        <span class="page-index">2 / 12</span>
+        <a class="nav-btn next-link" href="stul-03.html">Часть I, гл. VI–VIII: Брильянтовый дым и «голубой воришка» &rarr;</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <span>Илья Ильф и Евгений Петров · «Двенадцать стульев» · Многостраничное HTML-издание</span>
+      <span><a href="index.html">Оглавление</a> · <a href="geroi.html">Герои и места</a></span>
+    </div>
+  </footer>
+
+  <script src="book.js"></script>
+</body>
+</html>

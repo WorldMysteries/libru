@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Часть II, гл. XXVI–XXIX. Следы по стране и отплытие в Поволжье — Двенадцать стульев</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="mode-spread">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Двенадцать стульев</a>
+      <nav class="top-links">
+        <a href="index.html">Оглавление</a>
+        <a href="stul-01.html" class="active">Читать книгу</a>
+        <a href="geroi.html">Герои и места</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="reader-toolbar">
+    <div class="reader-toolbar-inner">
+      <div class="toolbar-group">
+        <select id="chapterSelect" class="ctrl-select" aria-label="Перейти к главе"><option value="stul-01.html">Часть I, гл. I–III. Уездный город N и тайна Клавдии Ивановны</option><option value="stul-02.html">Часть I, гл. IV–V. Великий комбинатор</option><option value="stul-03.html">Часть I, гл. VI–VIII. Брильянтовый дым и «голубой воришка»</option><option value="stul-04.html">Часть I, гл. IX–XI. Архивариус, Полесов и «Меч и орало»</option><option value="stul-05.html">Часть I, гл. XII–XIV. Знойная женщина и путь в столицу</option><option value="stul-06.html">Часть II, гл. XV–XVIII. Общежитие Бертольда Шварца и музей мебели</option><option value="stul-07.html">Часть II, гл. XIX–XXII. Эллочка-людоедка и война с Вандербильдихой</option><option value="stul-08.html">Часть II, гл. XXIII–XXV. Инженер Щукин, Изнуренков и крах на аукционе</option><option value="stul-09.html" selected>Часть II, гл. XXVI–XXIX. Следы по стране и отплытие в Поволжье</option><option value="stul-10.html">Часть III, гл. XXX–XXXIII. Межпланетный шахматный конгресс в Васюках</option><option value="stul-11.html">Часть III, гл. XXXIV–XXXVIII. Пятигорск, Кавказ и отец Федор на скале</option><option value="stul-12.html">Часть III, гл. XXXIX–XL. Двенадцатый стул и финал концессии</option></select>
+        <button type="button" id="bookmarkBtn" class="ctrl-btn" data-slug="stul-09" data-title="Часть II, гл. XXVI–XXIX. Следы по стране и отплытие в Поволжье">Закладка</button>
+      </div>
+
+      <div class="toolbar-group">
+        <button type="button" class="ctrl-btn" data-set-mode="spread">Книжный разворот</button>
+        <button type="button" class="ctrl-btn" data-set-mode="scroll">Лента</button>
+      </div>
+
+      <div class="toolbar-group">
+        <button type="button" id="fontDec" class="ctrl-btn" title="Уменьшить шрифт">А−</button>
+        <span id="fontSizeLabel" class="page-index" style="padding:0 4px;">18 px</span>
+        <button type="button" id="fontInc" class="ctrl-btn" title="Увеличить шрифт">А+</button>
+        <button type="button" class="ctrl-btn" data-set-theme="paper">Бумага</button>
+        <button type="button" class="ctrl-btn" data-set-theme="sepia">Сепия</button>
+        <button type="button" class="ctrl-btn" data-set-theme="night">Ночь</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="main-wrap">
+    <!-- Open Book Spread Mode -->
+    <section
+      id="spreadContainer"
+      class="spread-container"
+      data-book-label="Илья Ильф и Евгений Петров · Двенадцать стульев"
+      data-chapter-title="Следы по стране и отплытие в Поволжье"
+      data-chapter-roman="Часть II, гл. XXVI–XXIX"
+      data-chapter-part="Часть вторая · В Москве"
+      data-chapter-location="Москва · Редакция газеты «Станок» и вокзал"
+      data-prev-href="stul-08.html"
+      data-next-href="stul-10.html"
+    >
+      <div class="spread-book">
+        <div id="spreadLeft" class="spread-page left"></div>
+        <div id="spreadRight" class="spread-page right"></div>
+      </div>
+      <div class="spread-controls">
+        <button type="button" id="spreadPrev" class="ctrl-btn">&larr; Предыдущая страница</button>
+        <span id="spreadIndicator" class="page-index"></span>
+        <button type="button" id="spreadNext" class="ctrl-btn active">Следующая страница &rarr;</button>
+      </div>
+    </section>
+
+    <!-- Comfortable Continuous Scroll Mode -->
+    <article class="book-sheet is-chapter-sheet">
+      <div class="kicker">Часть вторая · В Москве · Часть II, гл. XXVI–XXIX · Москва · Редакция газеты «Станок» и вокзал</div>
+      <h1>Следы по стране и отплытие в Поволжье</h1>
+      <p class="subtitle">Стул поэта Ляписа-Трубецкого, редакции газет и договор с театром «Колумб»</p>
+      <hr class="hairline" />
+      
+      
+      <div id="chapterSourceProse" class="prose">
+        <p class="dropcap">Пришлось переходить к точечной осаде. Один стул отыскался в редакции газеты «Станок», другой — у графомана Никифора Ляписа-Трубецкого, сочинявшего бесчисленные баллады о Гавриле («Служил Гаврила почтальоном, Гаврила письма разносил...»). Везде пусто!</p>
+      <p>Четыре последних стула были куплены проезжим театром «Колумб», только что отправившимся на волжские гастроли на агитпароходе «Скрябин». Без билетов и денег, но с неиссякаемым оптимизмом Остап Бендер нанялся на пароход «художником по плакатам», прихватив Воробьянинова в качестве «мальчика-подмастерья».</p>
+      </div>
+      <aside class="annotations">
+      <h2>Примечания к главе</h2>
+      <dl>
+        <dt>Гаврилиада Ляписа</dt><dd>Пародия Ильфа и Петрова на халтурную литературную поденщину конца 1920-х годов.</dd>
+      </dl>
+    </aside>
+      <nav class="chapter-pager">
+        <a class="nav-btn prev-link" href="stul-08.html">&larr; Часть II, гл. XXIII–XXV: Инженер Щукин, Изнуренков и крах на аукционе</a>
+        <span class="page-index">9 / 12</span>
+        <a class="nav-btn next-link" href="stul-10.html">Часть III, гл. XXX–XXXIII: Межпланетный шахматный конгресс в Васюках &rarr;</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <span>Илья Ильф и Евгений Петров · «Двенадцать стульев» · Многостраничное HTML-издание</span>
+      <span><a href="index.html">Оглавление</a> · <a href="geroi.html">Герои и места</a></span>
+    </div>
+  </footer>
+
+  <script src="book.js"></script>
+</body>
+</html>
