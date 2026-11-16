@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Белая гвардия — Многостраничная HTML-книга</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Белая гвардия</a>
+      <nav class="top-links">
+        <a href="index.html" class="active">Титул и оглавление</a>
+        <a href="glava-01.html">Читать с первой главы</a>
+        <a href="geroi.html">Герои и места</a>
+      </nav>
+      <div class="toolbar-group">
+        <button type="button" class="ctrl-btn" data-set-theme="paper">Бумага</button>
+        <button type="button" class="ctrl-btn" data-set-theme="sepia">Сепия</button>
+        <button type="button" class="ctrl-btn" data-set-theme="night">Ночь</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-wrap">
+    <section class="cover-hero">
+      <figure class="plate-frame" style="margin:0;">
+        <img src="images/cover.svg" alt="Фронтиспис: зимняя ночь над городом, красная звезда" />
+        <figcaption class="plate-caption">
+          <span>Фронтиспис издания</span>
+          <span>1922–1924</span>
+        </figcaption>
+      </figure>
+
+      <div class="cover-meta">
+        <div>
+          <p class="kicker">Михаил Афанасьевич Булгаков</p>
+          <h1 class="cover-title">Белая гвардия</h1>
+          <p class="subtitle" style="margin-top:14px;">
+            Полное многостраничное издание: 20 глав в трёх частях и приложение с ранней редакцией окончания,
+            книжный разворот, лента чтения, закладки.
+          </p>
+          <blockquote class="epigraph"><p><strong><em>Пошел мелкий снег и вдруг повалил хлопьями.</em></strong> <strong><em>Ветер завыл; сделалась метель. В одно мгновение</em></strong> <strong><em>темное небо смешалось с снежным морем. Все</em></strong> <strong><em>исчезло.</em></strong> <strong><em>– Ну, барин, – закричал ямщик, – беда: буран!</em></strong></p><cite>— А. С. Пушкин, <em>«Капитанская дочка»</em></cite><p style="margin-top:12px;"><strong><em>И судимы были мертвые по написанному в книгах сообразно с делами своими…</em></strong></p><cite>— Откровение Иоанна Богослова</cite></blockquote>
+          <p class="page-index" style="margin-top:14px;"><em>Посвящается Любови Евгеньевне Белозерской</em></p>
+        </div>
+
+        <div>
+          <div class="cta-row">
+            <a href="glava-01.html" class="btn-primary">Открыть Главу I &rarr;</a>
+            <a href="#toc" class="btn-secondary">Перейти к оглавлению</a>
+            <a href="geroi.html" class="btn-secondary">Герои и места</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="savedBookmarksBox" style="display:none; padding: 28px 0; border-bottom: 1px solid var(--border);">
+      <h2>Ваши закладки</h2>
+      <div id="savedBookmarksList" class="toolbar-group"></div>
+    </section>
+
+    <section id="toc" style="padding-top: 36px;">
+      <p class="kicker">Содержание романа</p>
+      <h2 style="font-size:2.2rem;">Оглавление (20 глав)</h2>
+
+      <div class="toc-tools">
+        <input id="tocSearch" class="search-input" type="search" placeholder="Поиск главы по первым словам..." />
+        <div class="toolbar-group">
+          <button type="button" class="ctrl-btn active" data-part-filter="all">Весь роман</button>
+          <button type="button" class="ctrl-btn" data-part-filter="1">Часть первая</button>
+          <button type="button" class="ctrl-btn" data-part-filter="2">Часть вторая</button>
+          <button type="button" class="ctrl-btn" data-part-filter="3">Часть третья</button>
+          <button type="button" class="ctrl-btn" data-part-filter="4">Приложение</button>
+        </div>
+      </div>
+
+      <h3 style="font-family:Cormorant Garamond,serif;font-size:1.5rem;margin:24px 0 10px;">Часть первая</h3>
+      <ul class="toc-list">
+        <li data-toc-item data-part="1"><a href="glava-01.html"><span class="toc-num">Глава I</span><span class="toc-title">«Велик был год и страшен год…»</span><span class="toc-loc">Часть первая</span></a></li>
+        <li data-toc-item data-part="1"><a href="glava-02.html"><span class="toc-num">Глава II</span><span class="toc-title">«Итак, был белый, мохнатый декабрь. Он…»</span><span class="toc-loc">Часть первая</span></a></li>
+        <li data-toc-item data-part="1"><a href="glava-03.html"><span class="toc-num">Глава III</span><span class="toc-title">«В этот ночной час в нижней…»</span><span class="toc-loc">Часть первая</span></a></li>
+        <li data-toc-item data-part="1"><a href="glava-04.html"><span class="toc-num">Глава IV</span><span class="toc-title">«Как многоярусные соты, дымился и шумел…»</span><span class="toc-loc">Часть первая</span></a></li>
+        <li data-toc-item data-part="1"><a href="glava-05.html"><span class="toc-num">Глава V</span><span class="toc-title">«Так вот‐с, нежданно‐негаданно появилась третья сила…»</span><span class="toc-loc">Часть первая</span></a></li>
+        <li data-toc-item data-part="1"><a href="glava-06.html"><span class="toc-num">Глава VI</span><span class="toc-title">«Магазин «Парижский шик» мадам Анжу помещался…»</span><span class="toc-loc">Часть первая</span></a></li>
+        <li data-toc-item data-part="1"><a href="glava-07.html"><span class="toc-num">Глава VII</span><span class="toc-title">«Глубокою ночью угольная тьма залегла на…»</span><span class="toc-loc">Часть первая</span></a></li>
+      </ul>
+
+      <h3 style="font-family:Cormorant Garamond,serif;font-size:1.5rem;margin:34px 0 10px;">Часть вторая</h3>
+      <ul class="toc-list">
+        <li data-toc-item data-part="2"><a href="glava-08.html"><span class="toc-num">Глава VIII</span><span class="toc-title">«Да, был виден туман. Игольчатый мороз…»</span><span class="toc-loc">Часть вторая</span></a></li>
+        <li data-toc-item data-part="2"><a href="glava-09.html"><span class="toc-num">Глава IX</span><span class="toc-title">«Полковник Болботун, потеряв семерых казаков убитыми…»</span><span class="toc-loc">Часть вторая</span></a></li>
+        <li data-toc-item data-part="2"><a href="glava-10.html"><span class="toc-num">Глава X</span><span class="toc-title">«Странные перетасовки, переброски, то стихийно боевые…»</span><span class="toc-loc">Часть вторая</span></a></li>
+        <li data-toc-item data-part="2"><a href="glava-11.html"><span class="toc-num">Глава XI</span><span class="toc-title">«Повинуясь телефонному голосу, унтер‐офицер Турбин Николай…»</span><span class="toc-loc">Часть вторая</span></a></li>
+      </ul>
+
+      <h3 style="font-family:Cormorant Garamond,serif;font-size:1.5rem;margin:34px 0 10px;">Часть третья</h3>
+      <ul class="toc-list">
+        <li data-toc-item data-part="3"><a href="glava-12.html"><span class="toc-num">Глава XII</span><span class="toc-title">«В маленькой спальне Турбина на двух…»</span><span class="toc-loc">Часть третья</span></a></li>
+        <li data-toc-item data-part="3"><a href="glava-13.html"><span class="toc-num">Глава XIII</span><span class="toc-title">«Брынь» в последний раз Турбин услыхал…»</span><span class="toc-loc">Часть третья</span></a></li>
+        <li data-toc-item data-part="3"><a href="glava-14.html"><span class="toc-num">Глава XIV</span><span class="toc-title">«Они нашлись. Никто не вышел в…»</span><span class="toc-loc">Часть третья</span></a></li>
+        <li data-toc-item data-part="3"><a href="glava-15.html"><span class="toc-num">Глава XV</span><span class="toc-title">«Был вечер. Время подходило к одиннадцати…»</span><span class="toc-loc">Часть третья</span></a></li>
+        <li data-toc-item data-part="3"><a href="glava-16.html"><span class="toc-num">Глава XVI</span><span class="toc-title">«Многая ле‐ета. Многая лета…»</span><span class="toc-loc">Часть третья</span></a></li>
+        <li data-toc-item data-part="3"><a href="glava-17.html"><span class="toc-num">Глава XVII</span><span class="toc-title">«Заветной цели, о которой Николка думал…»</span><span class="toc-loc">Часть третья</span></a></li>
+        <li data-toc-item data-part="3"><a href="glava-18.html"><span class="toc-num">Глава XVIII</span><span class="toc-title">«Турбин стал умирать днем двадцать второго…»</span><span class="toc-loc">Часть третья</span></a></li>
+        <li data-toc-item data-part="3"><a href="glava-19.html"><span class="toc-num">Глава XIX</span><span class="toc-title">«Пэтурра. Было его жития в Городе…»</span><span class="toc-loc">Часть третья</span></a></li>
+        <li data-toc-item data-part="3"><a href="glava-20.html"><span class="toc-num">Глава XX</span><span class="toc-title">«Велик был год и страшен год…»</span><span class="toc-loc">Часть третья</span></a></li>
+      </ul>
+
+      <h3 style="font-family:Cormorant Garamond,serif;font-size:1.5rem;margin:34px 0 10px;">Приложение</h3>
+      <ul class="toc-list">
+        <li data-toc-item data-part="4"><a href="rannyaya-redaktsiya.html"><span class="toc-num">Приложение</span><span class="toc-title">Окончание. Ранняя редакция</span><span class="toc-loc">Приложение</span></a></li>
+      </ul>
+
+      <p class="page-index" style="margin-top:28px;">Текст романа: электронное издание (royallib.com). Предисловие, комментарии и иллюстрации этого издания в сайт не включены. Главы в романе не имеют названий, в оглавлении указаны их первые слова.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <span>М. А. Булгаков · «Белая гвардия» · Чистое HTML-издание</span>
+      <span><a href="glava-01.html">Глава I</a> · <a href="geroi.html">Герои и места</a></span>
+    </div>
+  </footer>
+
+  <script src="book.js"></script>
+</body>
+</html>
