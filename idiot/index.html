@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="paper">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Идиот — Фёдор Михайлович Достоевский. Электронное издание</title>
+<style>
+:root{
+  --bg:#f5f1e6; --panel:#fffdf7; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8b2f1f; --accent-soft:#f3e3de; --line:#e0d6c2; --bar:#8b2f1f;
+}
+html[data-theme="sepia"]{
+  --bg:#efe3c8; --panel:#f8efdb; --ink:#3d2f1e; --muted:#7a6448;
+  --accent:#7a4a12; --accent-soft:#e9d9b6; --line:#dccba3; --bar:#7a4a12;
+}
+html[data-theme="night"]{
+  --bg:#15141a; --panel:#1e1d24; --ink:#d9d3c5; --muted:#9c948a;
+  --accent:#d3a24a; --accent-soft:#2a2733; --line:#38353f; --bar:#d3a24a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif',serif;
+  font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.topbar{position:sticky;top:0;z-index:50;background:var(--panel);
+  border-bottom:1px solid var(--line);box-shadow:0 1px 0 rgba(0,0,0,.04)}
+.topbar-in{max-width:960px;margin:0 auto;padding:.55rem 1rem;
+  display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;justify-content:space-between}
+.brand{font-weight:bold;text-decoration:none;color:var(--ink);letter-spacing:.04em}
+.brand small{color:var(--muted);font-weight:normal}
+nav.links{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center}
+nav.links a{color:var(--muted);text-decoration:none;font-size:.92rem}
+nav.links a:hover{color:var(--accent)}
+.themes{display:flex;gap:.25rem}
+.themes button{border:1px solid var(--line);background:var(--bg);color:var(--muted);
+  border-radius:999px;padding:.2rem .7rem;font-size:.8rem;cursor:pointer;font-family:inherit}
+.themes button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--bar);z-index:60}
+.wrap{max-width:760px;margin:0 auto;padding:1.6rem 1rem 3rem}
+.wide{max-width:960px}
+.kicker{color:var(--muted);font-size:.82rem;letter-spacing:.22em;text-transform:uppercase}
+.dates{float:right;color:var(--muted);font-size:.82rem;letter-spacing:.14em}
+h1{font-size:clamp(2.1rem,6vw,3.2rem);line-height:1.15;margin:.4rem 0 .2rem}
+h2{font-size:1.35rem;line-height:1.3;margin:2.2rem 0 .8rem}
+h3{font-size:1.05rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
+.author{font-size:1.05rem;color:var(--muted);letter-spacing:.06em}
+.epigraph{margin:1.6rem 0;padding:.2rem 1.2rem;border-left:3px solid var(--accent);
+  font-style:italic;color:var(--muted)}
+.epigraph .who{display:block;font-style:normal;font-size:.9rem;margin-top:.4rem}
+.note{font-size:.85rem;color:var(--muted)}
+.cta{margin:1.8rem 0 1rem;display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
+  padding:.6rem 1.3rem;border-radius:999px;font-size:.95rem;border:none;cursor:pointer;font-family:inherit}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.chip{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:999px;
+  padding:.25rem .85rem;font-size:.85rem;cursor:pointer;font-family:inherit}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.toc{list-style:none;margin:1rem 0;padding:0}
+.toc li{margin:0 0 .7rem}
+.toc a.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:10px;
+  padding:.9rem 1.1rem;text-decoration:none;color:var(--ink)}
+.toc a.card:hover{border-color:var(--accent)}
+.toc .pt{font-size:.8rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase}
+.toc .tt{font-weight:bold;margin:.15rem 0 .25rem}
+.toc .sm{font-size:.9rem;color:var(--muted);line-height:1.55}
+.toc .mt{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+.anno{background:var(--accent-soft);border-radius:10px;padding:1rem 1.2rem;margin:1.2rem 0 2rem;
+  font-size:.95rem;color:var(--ink)}
+.anno b{color:var(--accent)}
+.chapter h2{margin-top:2.6rem;border-top:1px solid var(--line);padding-top:1.4rem}
+.chapter h2 .num{display:block;font-size:.85rem;letter-spacing:.25em;color:var(--accent);
+  text-transform:uppercase;font-weight:normal;margin-bottom:.3rem}
+p{text-align:justify;hyphens:auto;margin:0 0 1rem}
+.dial{display:none}
+.subtitle{text-align:center;font-weight:bold;letter-spacing:.18em;margin:1.8rem 0 1rem}
+.mark{margin:1.2rem 0;display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+.prevnext{display:flex;justify-content:space-between;gap:.6rem;flex-wrap:wrap;
+  border-top:1px solid var(--line);margin-top:2.5rem;padding-top:1.2rem}
+.prevnext a{text-decoration:none;color:var(--accent);font-size:.95rem}
+footer{border-top:1px solid var(--line);margin-top:3rem;padding:1.4rem 1rem 2.4rem;text-align:center;
+  color:var(--muted);font-size:.85rem}
+footer nav{margin-top:.4rem}
+footer nav a{color:var(--muted);margin:0 .6rem;text-decoration:none}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.person,.placecard{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem}
+.person h4,.placecard h4{margin:0 0 .4rem;font-size:1.02rem}
+.person p,.placecard p{margin:0;font-size:.9rem;color:var(--muted);text-align:left}
+.bm{list-style:none;padding:0;margin:0}
+.bm li{background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  padding:.5rem .9rem;margin-bottom:.5rem;display:flex;justify-content:space-between;gap:.6rem;align-items:center}
+.bm a{color:var(--ink);text-decoration:none}
+.bm button{background:none;border:none;color:var(--accent);cursor:pointer;font-size:.85rem;font-family:inherit}
+@media(max-width:640px){
+  .grid{grid-template-columns:1fr}
+  .dates{float:none;display:block;margin-top:.2rem}
+  p{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar"><div class="topbar-in">
+<a class="brand" href="index.html">Ф. М. Достоевский<small> · Идиот</small></a>
+<nav class="links"><a href="index.html">Оглавление</a><a href="geroy.html">Герои и места</a><span class="themes">
+<button data-t="paper" type="button">Бумага</button>
+<button data-t="sepia" type="button">Сепия</button>
+<button data-t="night" type="button">Ночь</button></span></nav>
+</div></header>
+<main class="wrap">
+<div class="kicker">Фронтиспис издания<span class="dates">1867–1868</span></div>
+<div class="author">Фёдор Михайлович Достоевский</div>
+<h1>Идиот</h1>
+<p>Весь роман в четырёх частях и пятидесяти главах — на четырнадцати страницах, от первого поезда в туманном Петербурге до ночи у тела Настасьи Филипповны. Издание работает автономно, в любом браузере: лента чтения, закладки и краткое содержание каждого раздела.</p>
+<div class="epigraph">«Правда, князь, что вы раз говорили, что мир спасёт „красота“?»<span class="who">— Ипполит Терентьев, часть третья, глава V</span></div>
+<p class="note">Текст — по электронному изданию библиотеки Royallib; роман печатался в журнале «Русский вестник» в 1868 году.</p>
+<div class="cta"><a class="btn" href="chast1-1.html">Начать чтение →</a><a class="btn ghost" href="#toc">Перейти к оглавлению</a><a class="btn ghost" href="geroy.html">Герои и места</a></div>
+
+<h2 id="zalki">Ваши закладки</h2>
+<ul class="bm" id="bmlist"></ul>
+
+<h2 id="toc">Оглавление (12 разделов)</h2>
+<div class="mark"><button class="chip" data-f="vse" type="button">Весь роман</button><button class="chip" data-f="Часть-первая" type="button">Часть первая</button><button class="chip" data-f="Часть-вторая" type="button">Часть вторая</button><button class="chip" data-f="Часть-третья" type="button">Часть третья</button><button class="chip" data-f="Часть-четвёртая" type="button">Часть четвёртая</button></div>
+<ul class="toc" id="toclist">
+<li data-part="Часть-первая"><a class="card" href="chast1-1.html"><span class="pt">Часть первая · главы I–IV</span><div class="tt">Поезд в Петербург и дом Епанчиных</div><div class="sm">Конец ноября, оттепель. В вагоне третьего класса Петербургско-Варшавской железной дороги знакомятся два молодых человека: князь Лев Николаевич Мышкин, возвращающийся из швейцарской…</div><div class="mt">Поезд на Петербург; Литейная, дом Епанчиных · читать ≈ 82 мин</div></a></li>
+<li data-part="Часть-первая"><a class="card" href="chast1-2.html"><span class="pt">Часть первая · главы V–VIII</span><div class="tt">«Экзамен» у Епанчиных и Иволгины</div><div class="sm">Лизавета Прокофьевна и три дочери устраивают князю «экзамен»: рассказы о Швейцарии, о детях и об истории Марии, которую его словами дети научились снова любить, покоряют всё семейс…</div><div class="mt">Петербург; квартира Иволгиных · читать ≈ 84 мин</div></a></li>
+<li data-part="Часть-первая"><a class="card" href="chast1-3.html"><span class="pt">Часть первая · главы IX–XII</span><div class="tt">Сто тысяч Рогожина</div><div class="sm">Вечер у Иволгиных: Настасья Филипповна сама приходит объявить решение о своей судьбе, а за ней в прихожую вваливается Рогожин с пьяной компанией и сотней тысяч рублей — «куплю!». С…</div><div class="mt">Петербург; квартира Иволгиных · читать ≈ 54 мин</div></a></li>
+<li data-part="Часть-первая"><a class="card" href="chast1-4.html"><span class="pt">Часть первая · главы XIII–XVI</span><div class="tt">Именины Настасьи Филипповны</div><div class="sm">Князь идёт на именины к Настасье Филипповне: гости — Тотский, генерал Епанчин, Ганя, Фердыщенко, Птицын. Чтение вслух письма Лизаветы Прокофьевны, дерзкие тосты, весть о неожиданно…</div><div class="mt">Петербург; квартира Настасьи Филипповны · читать ≈ 71 мин</div></a></li>
+<li data-part="Часть-вторая"><a class="card" href="chast2-1.html"><span class="pt">Часть вторая · главы I–IV</span><div class="tt">Наследство и дом Рогожина</div><div class="sm">Через два дня после вечера князь едет в Москву за наследством; о нём пишут газеты, а через полгода он возвращается — теперь человек с состоянием. Июнь, дача Епанчиных в Павловске; …</div><div class="mt">Москва — Петербург — Павловск; дом Рогожина · читать ≈ 76 мин</div></a></li>
+<li data-part="Часть-вторая"><a class="card" href="chast2-2.html"><span class="pt">Часть вторая · главы V–VIII</span><div class="tt">Дача Лебедева и «рыцарь бедный»</div><div class="sm">Князь поселяется в Павловске, на даче Лукьяна Лебедева, чиновника «из практики». У Епанчиных он знакомится с Евгением Павловичем Радомским, а Аглая читает вслух «Жил на свете рыцар…</div><div class="mt">Павловск; дача Лебедева, дача Епанчиных · читать ≈ 93 мин</div></a></li>
+<li data-part="Часть-вторая"><a class="card" href="chast2-3.html"><span class="pt">Часть вторая · главы IX–XII</span><div class="tt">«Издёвка» и письма Настасьи Филипповны</div><div class="sm">Депутация разоблачена: Ганя при всех выводит Бурдовского на чистую воду, а оскорблённая Лизавета Прокофьевна покидает собрание. На третий день Епанчины умилостивились, и Лизавета П…</div><div class="mt">Павловск; дача Лебедева · читать ≈ 77 мин</div></a></li>
+<li data-part="Часть-третья"><a class="card" href="chast3-1.html"><span class="pt">Часть третья · главы I–IV</span><div class="tt">Воксал, дуэль и вечер на террасе</div><div class="sm">Летний Павловск. Происшествие в павловском воксале: Настасья Филипповна появляется среди публики и устраивает скандал, о котором шепчется весь город. Боксёр Келлер присылает князю …</div><div class="mt">Павловск; воксал, дача князя · читать ≈ 99 мин</div></a></li>
+<li data-part="Часть-третья"><a class="card" href="chast3-2.html"><span class="pt">Часть третья · главы V–X</span><div class="tt">Исповедь Ипполита и свидание на скамейке</div><div class="sm">Ночью у князя умирающий Ипполит читает своё «Необходимое объяснение» — о приговорённом к смерти человеке, о картине Гольбейна «Мёртвый Христос» и о том, что «мир спасёт красота»; и…</div><div class="mt">Павловск; дача князя, зелёная скамейка · читать ≈ 133 мин</div></a></li>
+<li data-part="Часть-четвёртая"><a class="card" href="chast4-1.html"><span class="pt">Часть четвёртая · главы I–IV</span><div class="tt">Слухи о сватовстве и удар генерала</div><div class="sm">Сватовство князя за Аглаю становится общим достоянием: Варя и Ганя обсуждают его, Ипполит переселяется в дом Птицыных и кочует между недругами и друзьями. Сумасбродства старого ген…</div><div class="mt">Петербург; дом Птицыных · читать ≈ 77 мин</div></a></li>
+<li data-part="Часть-четвёртая"><a class="card" href="chast4-2.html"><span class="pt">Часть четвёртая · главы V–VIII</span><div class="tt">Вечер у Епанчиных и разбитая ваза</div><div class="sm">Вечер на даче Епанчиных с княгиней Белоконской и петербургским светом: разговоры о «камер-юнкерах», испытания князя на ловкость — и разбитая китайская ваза, за которой следуют насм…</div><div class="mt">Павловск; дача Епанчиных · читать ≈ 115 мин</div></a></li>
+<li data-part="Часть-четвёртая"><a class="card" href="chast4-3.html"><span class="pt">Часть четвёртая · главы IX–XII</span><div class="tt">Свадьба, ночь у Рогожина и заключение</div><div class="sm">Положение меняется быстрее, чем все успевают понять: разрыв с Аглаей, предсвадебная тревога Настасьи Филипповны, «бедный идиот! и что с ним будет теперь?». Перед самым венчанием он…</div><div class="mt">Павловск — Петербург; дом Рогожина · читать ≈ 74 мин</div></a></li>
+</ul>
+
+
+</main>
+<footer>
+<p>Фёдор Михайлович Достоевский, «Идиот» — роман в четырёх частях, впервые опубликован в журнале «Русский вестник», 1868. Текст — по электронному изданию библиотеки Royallib. Издание работает автономно, без сети.</p>
+<nav><a href="index.html">Оглавление</a><a href="chast1-1.html">Первая глава</a><a href="geroy.html">Герои и места</a></nav>
+</footer>
+<script>
+(function(){
+  var KEY='ua_idiot_theme', BM='ua_idiot_bookmarks';
+  function setTheme(t){
+    document.documentElement.setAttribute('data-theme',t);
+    try{localStorage.setItem(KEY,t)}catch(e){}
+    var bs=document.querySelectorAll('.themes button');
+    for(var i=0;i<bs.length;i++){bs[i].setAttribute('aria-pressed', bs[i].dataset.t===t?'true':'false');}
+  }
+  var saved='paper';
+  try{saved=localStorage.getItem(KEY)||'paper'}catch(e){}
+  setTheme(saved);
+  var th=document.querySelectorAll('.themes button');
+  for(var i=0;i<th.length;i++){
+    th[i].addEventListener('click',function(){setTheme(this.dataset.t)});
+  }
+  // прогресс чтения
+  function onScroll(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    var p=max>0?(h.scrollTop/max)*100:0;
+    var bar=document.getElementById('progress');
+    if(bar)bar.style.width=p+'%';
+  }
+  document.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  // закладки
+  function getBM(){try{return JSON.parse(localStorage.getItem(BM))||[]}catch(e){return []}}
+  function saveBM(l){try{localStorage.setItem(BM,JSON.stringify(l))}catch(e){}}
+  function same(a){return getBM().some(function(x){return x.u===a})}
+  var mark=document.getElementById('markbtn');
+  if(mark){
+    function draw(){mark.textContent=same(mark.dataset.u)?'✓ в закладках':'+ в закладки'}
+    draw();
+    mark.addEventListener('click',function(){
+      var l=getBM();
+      if(same(mark.dataset.u)){l=l.filter(function(x){return x.u!==mark.dataset.u})}
+      else{l.push({u:mark.dataset.u,t:mark.dataset.t})}
+      saveBM(l);draw();
+    });
+  }
+  // фильтр оглавления
+  var chips=document.querySelectorAll('.chip[data-f]');
+  var items=document.querySelectorAll('#toclist li');
+  if(chips.length&&items.length){
+    function setFilter(f){
+      for(var i=0;i<chips.length;i++){chips[i].setAttribute('aria-pressed',chips[i].dataset.f===f?'true':'false')}
+      for(var j=0;j<items.length;j++){
+        var it=items[j];
+        it.style.display=(f==='vse'||it.dataset.part===f)?'':'none';
+      }
+    }
+    for(var k=0;k<chips.length;k++){
+      chips[k].addEventListener('click',function(){setFilter(this.dataset.f)});
+    }
+    setFilter('vse');
+  }
+  var list=document.getElementById('bmlist');
+  if(list){
+    function render(){
+      var l=getBM();list.innerHTML='';
+      if(!l.length){list.innerHTML='<li class="note" style="border:none;background:none">Пока пусто — отметьте любой раздел кнопкой «в закладки» на странице чтения.</li>';return}
+      l.forEach(function(x){
+        var li=document.createElement('li');
+        var a=document.createElement('a');a.href=x.u;a.textContent=x.t;
+        var b=document.createElement('button');b.textContent='убрать';
+        b.addEventListener('click',function(){saveBM(getBM().filter(function(y){return y.u!==x.u}));render()});
+        li.appendChild(a);li.appendChild(b);list.appendChild(li);
+      });
+    }
+    render();
+  }
+})();
+</script>
+</body>
+</html>
