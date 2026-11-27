@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Дама с собачкой — Многостраничная HTML-книга</title>
+<meta name="description" content="Рассказ Антона Чехова «Дама с собачкой» полностью: 4 главы, закладки, заметки, три темы чтения.">
+<link rel="stylesheet" href="css/style.css">
+<script>try{var t=localStorage.getItem('dama-theme');if(t)document.documentElement.setAttribute('data-theme',t);var f=localStorage.getItem('dama-font');if(f)document.documentElement.style.setProperty('--fs',f+'px');}catch(e){}</script>
+</head>
+<body class="home">
+<div class="trim" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<header class="bar">
+  <a class="brand" href="index.html">Дама с собачкой</a>
+  <nav class="links"><a href="index.html#toc">Оглавление</a><a href="geroi.html">Герои и места</a></nav>
+  <div class="tools">
+    <div class="themes" role="group" aria-label="Тема оформления"><button data-set-theme="paper">Бумага</button><button data-set-theme="sepia">Сепия</button><button data-set-theme="night">Ночь</button></div>
+    <div class="fsz" role="group" aria-label="Размер шрифта"><button data-font="-1" aria-label="Меньше">А−</button><button data-font="1" aria-label="Больше">А+</button></div>
+  </div>
+</header>
+
+<main class="home-main">
+<section class="hero">
+  <div class="hero-text">
+    <p class="author">Антон Павлович Чехов</p>
+    <h1>Дама с собачкой</h1>
+    <p class="lead">Полное многостраничное HTML-издание рассказа (4 главы), с закладками, заметками и тремя темами чтения. Работает автономно, без интернета.</p>
+    <blockquote><p>«Говорили, что на набережной появилось новое лицо: дама с собачкой.»</p><cite>А. П. Чехов. «Дама с собачкой», глава I</cite></blockquote>
+    <p class="cta"><a class="btn main" href="glava-1.html">Начать чтение →</a> <a class="btn" href="#toc">Оглавление</a> <a class="btn" href="geroi.html">Герои и места</a> <a class="btn resume" id="resume" href="#" hidden>Продолжить</a></p>
+  </div>
+  <figure class="hero-fig"><img src="images/cover.jpg" alt="Обложка «Дамы с собачкой»" width="200" height="322"><figcaption>Рассказ написан в 1899 году</figcaption></figure>
+</section>
+<section class="mine" id="mine" hidden><h2>Ваши закладки и заметки</h2><ul id="mine-list"></ul></section>
+<section class="toc" id="toc"><h2>Оглавление <small>(4 страницы)</small></h2><section class="tocpart"><ol><li><a href="glava-1.html"><span class="tl">I <em>глава</em></span><span class="tt">Ялта: дама с собачкой</span><span class="ts">Ялта</span></a></li><li><a href="glava-2.html"><span class="tl">II <em>глава</em></span><span class="tt">Неделя после знакомства</span><span class="ts">Ялта · Ореанда</span></a></li><li><a href="glava-3.html"><span class="tl">III <em>глава</em></span><span class="tt">Зима в Москве</span><span class="ts">Москва · город С.</span></a></li><li><a href="glava-4.html"><span class="tl">IV <em>глава</em></span><span class="tt">Свидания в «Славянском базаре»</span><span class="ts">Москва</span></a></li></ol></section></section>
+<p class="srcnote">Текст: электронное издание на основе общедоступной версии. Чехов умер в 1904 году, и произведение находится в общественном достоянии.</p>
+</main>
+<footer class="foot">
+  <p>Антон Павлович Чехов · «Дама с собачкой» · 1899</p>
+  <p><a href="index.html">Оглавление</a> · <a href="glava-1.html">Первая глава</a> · <a href="geroi.html">Герои и места</a></p>
+</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
