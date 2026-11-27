@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Человек в футляре — Многостраничная HTML-книга</title>
+<meta name="description" content="Рассказ Антона Чехова «Человек в футляре» полностью: 4 страницы, закладки, заметки, три темы чтения.">
+<link rel="stylesheet" href="css/style.css">
+<script>try{var t=localStorage.getItem('fut-theme');if(t)document.documentElement.setAttribute('data-theme',t);var f=localStorage.getItem('fut-font');if(f)document.documentElement.style.setProperty('--fs',f+'px');}catch(e){}</script>
+</head>
+<body class="home">
+<div class="trim" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<header class="bar">
+  <a class="brand" href="index.html">Человек в футляре</a>
+  <nav class="links"><a href="index.html#toc">Оглавление</a><a href="geroi.html">Герои и места</a></nav>
+  <div class="tools">
+    <div class="themes" role="group" aria-label="Тема оформления"><button data-set-theme="paper">Бумага</button><button data-set-theme="sepia">Сепия</button><button data-set-theme="night">Ночь</button></div>
+    <div class="fsz" role="group" aria-label="Размер шрифта"><button data-font="-1" aria-label="Меньше">А−</button><button data-font="1" aria-label="Больше">А+</button></div>
+  </div>
+</header>
+
+<main class="home-main">
+<section class="hero">
+  <div class="hero-text">
+    <p class="author">Антон Павлович Чехов</p>
+    <h1>Человек в футляре</h1>
+    <p class="lead">Полное многостраничное HTML-издание рассказа на 4 страницах, с закладками, заметками и тремя темами чтения. Работает автономно, без интернета.</p>
+    <blockquote><p>«Людей, одиноких по натуре, которые, как рак-отшельник или улитка, стараются уйти в свою скорлупу, на этом свете не мало.»</p><cite>А. П. Чехов. «Человек в футляре», часть первая</cite></blockquote>
+    <p class="cta"><a class="btn main" href="chast-1.html">Начать чтение →</a> <a class="btn" href="#toc">Оглавление</a> <a class="btn" href="geroi.html">Герои и места</a> <a class="btn resume" id="resume" href="#" hidden>Продолжить</a></p>
+  </div>
+  <figure class="hero-fig"><img src="images/cover.jpg" alt="Обложка издания «Человек в футляре»" width="419" height="500"><figcaption>Обложка издания Детгиз, 1957</figcaption></figure>
+</section>
+<section class="mine" id="mine" hidden><h2>Ваши закладки и заметки</h2><ul id="mine-list"></ul></section>
+<section class="toc" id="toc"><h2>Оглавление <small>(4 страницы)</small></h2><section class="tocpart"><ol><li><a href="chast-1.html"><span class="tl">Часть первая</span><span class="tt">В сарае старосты Прокофия</span><span class="ts">Село Мироносицкое</span></a></li><li><a href="chast-2.html"><span class="tl">Часть вторая</span><span class="tt">Сватовство</span><span class="ts">Город · гимназия</span></a></li><li><a href="chast-3.html"><span class="tl">Часть третья</span><span class="tt">Велосипед</span><span class="ts">Город</span></a></li><li><a href="chast-4.html"><span class="tl">Часть четвёртая</span><span class="tt">«Футляр» и ночь в сарае</span><span class="ts">Город · Мироносицкое</span></a></li></ol></section></section>
+<p class="srcnote">В рассказе нет авторских глав: деление на четыре страницы условное и сделано только для удобства чтения. Текст: электронное издание на основе общедоступной версии. Чехов умер в 1904 году, и произведение находится в общественном достоянии.</p>
+</main>
+<footer class="foot">
+  <p>Антон Павлович Чехов · «Человек в футляре» · 1898</p>
+  <p><a href="index.html">Оглавление</a> · <a href="chast-1.html">Первая страница</a> · <a href="geroi.html">Герои и места</a></p>
+</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
