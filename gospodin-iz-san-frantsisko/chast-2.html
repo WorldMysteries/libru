@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Часть II. На борту «Атлантиды» — Господин из Сан-Франциско</title><style>
+:root{--bg:#faf6ee;--card:#fffdf8;--ink:#2b2620;--muted:#7a6f5f;--accent:#8a2b1f;--line:#e5dccc;--shadow:rgba(60,45,20,.12)}
+body.theme-sepia{--bg:#f0e4cf;--card:#f8efdb;--ink:#3a2f22;--muted:#8a7a5f;--accent:#7a3a12;--line:#dcc9a6;--shadow:rgba(80,60,20,.18)}
+body.theme-night{--bg:#14120f;--card:#1d1a16;--ink:#d8cfc0;--muted:#968c7a;--accent:#c98a5a;--line:#332d24;--shadow:rgba(0,0,0,.5)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.7;transition:background .3s,color .3s}
+.wrap{max-width:880px;margin:0 auto;padding:0 1.2rem}
+header.top{border-bottom:1px solid var(--line);background:var(--card)}
+.topbar{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1.2rem;padding:.9rem 0}
+.brand{font-weight:bold;letter-spacing:.05em;font-size:.95rem;text-decoration:none;color:var(--ink)}
+.brand span{color:var(--accent)}
+nav.main{display:flex;gap:1.1rem;flex-wrap:wrap;margin-left:auto}
+nav.main a{color:var(--muted);text-decoration:none;font-size:.9rem}
+nav.main a:hover{color:var(--accent)}
+.themes{display:flex;gap:.4rem;margin-left:auto}
+.themes button{font-family:inherit;font-size:.8rem;padding:.25rem .7rem;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:99px;cursor:pointer}
+.themes button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:50}
+.frontispiece{text-align:center;padding:3.2rem 0 2.2rem;border-bottom:1px solid var(--line)}
+.years{letter-spacing:.35em;font-size:.85rem;color:var(--muted)}
+.frontispiece h1{font-size:clamp(2rem,6vw,3.4rem);font-weight:normal;font-style:italic;margin:.7rem 0 .4rem}
+.author{font-size:1.15rem;letter-spacing:.15em}
+.cover{max-width:270px;width:70%;height:auto;border-radius:4px;box-shadow:0 6px 24px var(--shadow);margin:1.6rem auto 0;display:block}
+.epigraph{max-width:560px;margin:2.4rem auto 0;font-style:italic;color:var(--muted);font-size:1.05rem}
+.epigraph .sig{display:block;text-align:right;margin-top:.6rem;font-style:normal;font-size:.9rem;letter-spacing:.1em}
+.edition{max-width:640px;margin:2.2rem auto;padding:1.3rem 1.6rem;background:var(--card);border:1px solid var(--line);border-radius:6px;font-size:.95rem;color:var(--muted)}
+.actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin:1.8rem 0}
+.btn{display:inline-block;padding:.65rem 1.6rem;border:1px solid var(--accent);color:var(--accent);text-decoration:none;border-radius:99px;font-size:.95rem}
+.btn.primary{background:var(--accent);color:#fff}
+.btn:hover{filter:brightness(1.08)}
+.resume{display:none;text-align:center;color:var(--muted);font-size:.9rem;margin-bottom:1rem}
+.resume a{color:var(--accent)}
+h2.sect{font-weight:normal;font-style:italic;font-size:1.5rem;text-align:center;margin:2.6rem 0 1.4rem}
+.toc{list-style:none;max-width:720px;margin:0 auto 2rem}
+.toc li{margin:0 0 1.1rem}
+.toc a{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1rem 1.3rem;transition:box-shadow .2s}
+.toc a:hover{box-shadow:0 4px 16px var(--shadow)}
+.toc .num{color:var(--accent);font-size:.8rem;letter-spacing:.2em}
+.toc .t{font-size:1.1rem;font-style:italic;margin:.15rem 0 .25rem}
+.toc .d{color:var(--muted);font-size:.9rem;line-height:1.5}
+footer{border-top:1px solid var(--line);margin-top:3rem;padding:1.8rem 0 2.4rem;color:var(--muted);font-size:.85rem;text-align:center}
+footer a{color:var(--accent);text-decoration:none}
+.phead{text-align:center;padding:2.6rem 0 1.4rem}
+.phead .num{letter-spacing:.3em;color:var(--muted);font-size:.85rem}
+.phead h1{font-weight:normal;font-style:italic;font-size:clamp(1.7rem,4.5vw,2.6rem);margin:.5rem 0}
+.prose{max-width:720px;margin:0 auto;font-size:1.08rem}
+.prose p{margin:0 0 1.15em;text-indent:1.6em;text-align:justify;hyphens:auto}
+.prose p:first-of-type{text-indent:0}
+.prose p:last-of-type{text-align:center;color:var(--muted);font-style:italic;margin-top:2.4rem}
+@media(min-width:1100px){.prose{max-width:100%;column-count:2;column-gap:3.2rem;column-rule:1px solid var(--line);font-size:1.02rem}}
+sup.note{font-size:.68em;color:var(--accent);cursor:pointer;margin-left:.15em}
+sup.note::after{content:'[' attr(data-note) ']'}
+.pop{position:absolute;max-width:300px;background:var(--card);border:1px solid var(--line);border-radius:6px;box-shadow:0 8px 28px var(--shadow);padding:.7rem .9rem;font-size:.88rem;color:var(--muted);z-index:60;line-height:1.5}
+.pop b{color:var(--accent);display:block;margin-bottom:.2rem}
+.navrow{display:flex;justify-content:space-between;gap:1rem;max-width:720px;margin:2.8rem auto 0;border-top:1px solid var(--line);padding-top:1.4rem}
+.navrow a{color:var(--accent);text-decoration:none;font-style:italic}
+.navrow a:hover{text-decoration:underline}
+@media(max-width:640px){nav.main{margin-left:0}.prose p{text-align:left}}
+</style></head><body class="" data-part="2"><div class="progress"></div><header class="top"><div class="wrap topbar"><a class="brand" href="index.html">Untold<span>Archive</span> · Бунин</a><nav class="main"><a href="index.html">Титул и оглавление</a><a href="chast-1.html">Читать с начала</a></nav><div class="themes"><button data-t="paper">Бумага</button><button data-t="sepia">Сепия</button><button data-t="night">Ночь</button></div></div></header><div class="phead"><div class="wrap"><div class="num">ЧАСТЬ II ИЗ VIII</div><h1>На борту «Атлантиды»</h1></div></div><main class="wrap"><div class="prose"><p>Был конец ноября, до самого Гибралтара пришлось плыть то в ледяной мгле, то среди бури с мокрым снегом; но плыли вполне благополучно.</p>
+<p>Пассажиров было много, пароход – знаменитая «Атлантида» – был похож на громадный отель со всеми удобствами, – с ночным баром, с восточными банями, с собственной газетой, – и жизнь на нем протекала весьма размеренно: вставали рано, при трубных звуках, резко раздававшихся по коридорам еще в тот сумрачный час, когда так медленно и неприветливо светало над серо-зеленой водяной пустыней, тяжело волновавшейся в тумане; накинув фланелевые пижамы, пили кофе, шоколад, какао; затем садились в мраморные ванны, делали гимнастику, возбуждая аппетит и хорошее самочувствие, совершали дневные туалеты и шли к первому завтраку; до одиннадцати часов полагалось бодро гулять по палубам, дыша холодной свежестью океана, или играть в шеффль-борд и другие игры для нового возбуждения аппетита, а в одиннадцать – подкрепляться бутербродами с бульоном; подкрепившись, с удовольствием читали газету и спокойно ждали второго завтрака, еще более питательного и разнообразного, чем первый; следующие два часа посвящались отдыху; все палубы были заставлены тогда лонгшезами, на которых путешественники лежали, укрывшись пледами, глядя на облачное небо и на пенистые бугры, мелькавшие за бортом, или сладко задремывая; в пятом часу их, освеженных и повеселевших, поили крепким душистым чаем с печеньями; в семь повещали трубными сигналами о том, что составляло главнейшую цель всего этого существования, венец его… И тут господин из Сан-Франциско, потирая от прилива жизненных сил руки, спешил в свою богатую люкс-кабину – одеваться.</p>
+<p>По вечерам этажи «Атлантиды» зияли во мраке как бы огненными несметными глазами, и великое множество слуг работало в поварских, судомойнях и винных подвалах. Океан, ходивший за стенами, был страшен, но о нем не думали, твердо веря во власть над ним командира, рыжего человека чудовищной величины и грузности, всегда как бы сонного, похожего в своем мундире, с широкими золотыми нашивками на огромного идола и очень редко появлявшегося на люди из своих таинственных покоев; на баке поминутно взвывала с адской мрачностью и взвизгивала с неистовой злобой сирена, но немногие из обедающих слышали сирену – ее заглушали звуки прекрасного струнного оркестра, изысканно и неустанно игравшего в мраморной двусветной зале, устланной бархатными коврами, празднично залитой огнями, переполненной декольтированными дамами и мужчинами во фраках и смокингах, стройными лакеями и почтительными метрдотелями, среди которых один, тот, что принимал заказы только на вина, ходил даже с цепью на шее, как какой-нибудь лорд-мэр. Смокинг и крахмальное белье очень молодили господина из СанФранциско. Сухой, невысокий, неладно скроенный, но крепко сшитый, расчищенный до глянца и в меру оживленный, он сидел в золотисто-жемчужном сиянии этого чертога за бутылкой янтарного иоганисберга, за бокалами и бокальчиками тончайшего стекла, за кудрявым букетом гиацинтов. Нечто монгольское было в его желтоватом лице с подстриженными серебряными усами, золотыми пломбами блестели его крупные зубы, старой слоновой костью – крепкая лысая голова. Богато, но по годам была одета его жена, женщина крупная, широкая и спокойная; сложно, но легко и прозрачно, с невинной откровенностью – дочь, высокая, тонкая, с великолепными волосами, прелестно убранными, с ароматическим от фиалковых лепешечек дыханием и с нежнейшими розовыми прыщиками возле губ и между лопаток, чуть припудренных… Обед длился больше часа, а после обеда открывались в бальной зале танцы, во время которых мужчины, – в том числе, конечно, и господин из Сан-Франциско, – задрав ноги, решали на основании последних биржевых новостей судьбы народов, до малиновой красноты накуривались гаванскими сигарами и напивались ликерами в баре, где служили негры в красных камзолах, с белками, похожими на облупленные крутые яйца.</p>
+<p>Океан с гулом ходил за стеной черными горами, вьюга крепко свистала в отяжелевших снастях, пароход весь дрожал, одолевая и ее, и эти горы, – точно плугом разваливая на стороны их зыбкие, то и дело вскипавшие и высоко взвивавшиеся пенистыми хвостами громады, – в смертной тоске стенала удушаемая туманом сирена, мерзли от стужи и шалели от непосильного напряжения внимания вахтенные на своей вышке, мрачным и знойным недрам преисподней, ее последнему, девятому кругу была подобна подводная утроба парохода, – та, где глухо гоготали исполинские топки, пожиравшие своими раскаленными зевами груды каменного угля, с грохотом ввергаемого в них облитыми едким, грязным потом и по пояс голыми людьми, багровыми от пламени; а тут, в баре, беззаботно закидывали ноги на ручки кресел, цедили коньяк и ликеры, плавали в волнах пряного дыма, в танцевальной зале все сияло и изливало свет, тепло и радость, пары то крутились в вальсах, то изгибались в танго – и музыка настойчиво, в какой-то сладостно-бесстыдной печали молила все об одном, все о том же… Был среди этой блестящей толпы некий великий богач, бритый, длинный, похожий на прелата, в старомодном фраке, был знаменитый испанский писатель, была всесветная красавица, была изящная влюбленная пара, за которой все с любопытством следили и которая не скрывала своего счастья: он танцевал только с ней, и все выходило у них так тонко, очаровательно, что только один командир знал, что эта пара нанята Ллойдом играть в любовь за хорошие деньги и уже давно плавает то на одном, то на другом корабле.</p>
+<p>В Гибралтаре всех обрадовало солнце, было похоже на раннюю весну; на борту «Атлантиды» появился новый пассажир, возбудивший к себе общий интерес, – наследный принц одного азиатского государства, путешествовавший инкогнито, человек маленький, весь деревянный, широколицый, узкоглазый, в золотых очках, слегка неприятный – тем, что крупные черные усы сквозили у него, как у мертвого, в общем же милый, простой и скромный. В Средиземном море снова пахнуло зимой, шла крупная и цветистая, как хвост павлина, волна, которую, при ярком блеске и совершенно чистом небе, развела весело и бешено летевшая навстречу трамонтана. Потом, на вторые сутки, небо стало бледнеть, горизонт затуманился: близилась земля, показались Иския, Капри, в бинокль уже виден был кусками сахара насыпанный у подножия чего-то сизого Неаполь… Многие леди и джентльмены уже надели легкие, мехом вверх, шубки; безответные, всегда шепотом говорящие бои – китайцы, кривоногие подростки со смоляными косами до пят и с девичьими густыми ресницами, исподволь вытаскивали к лестницам пледы, трости, чемоданы, несессеры… Дочь господина из Сан-Франциско стояла на палубе рядом с принцем, вчера вечером, по счастливой случайности, представленным ей, и делала вид, что пристально смотрит вдаль, куда он указывал ей, что-то объясняя, что-то торопливо и негромко рассказывая; он по росту казался среди других мальчиком, он был совсем не хорош собой и странен – очки, котелок, английское пальто, а волосы редких усов точно конские, смуглая тонкая кожа на плоском лице точно натянута и как будто слегка лакирована, – но девушка слушала его и от волнения не понимала, что он ей говорит; сердце ее билось от непонятного восторга перед ним: все, все в нем было не такое, как у прочих, – его сухие руки, его чистая кожа, под которой текла древняя царская кровь, даже его европейская, совсем простая, но как будто особенно опрятная одежда таили в себе неизъяснимое очарование. А сам господин из Сан-Франциско, в серых гетрах на лакированных ботинках, все поглядывал на стоявшую возле него знаменитую красавицу, высокую, удивительного сложения блондинку с разрисованными по последней парижской моде глазами, державшую на серебряной цепочке крохотную, гнутую, облезлую собачку и все разговаривавшую с нею. И дочь, в какой-то смутной неловкости, старалась не замечать его.</p>
+<p>Он был довольно щедр в пути и потому вполне верил в заботливость всех тех, что кормили и поили его, с утра до вечера служили ему, предупреждая его малейшее желание, охраняли его чистоту и покой, таскали его вещи, звали для него носильщиков, доставляли его сундуки в гостиницы. Так было всюду, так было в плавании, так должно было быть и в Неаполе. Неаполь рос и приближался; музыканты, блестя медью духовых инструментов, уже столпились на палубе и вдруг оглушили всех торжествующими звуками марша, гигант-командир, в парадной форме, появился на своих мостках и, как милостивый языческий бог, приветственно помотал рукой пассажирам – и господину из Сан-Франциско, так же, как и всем прочим, казалось, что это для него одного гремит марш гордой Америки, что это его приветствует командир с благополучным прибытием. А когда «Атлантида» вошла, наконец, в гавань, привалила к набережной своей многоэтажной громадой, усеянной людьми, и загрохотали сходни, – сколько портье и их помощников в картузах с золотыми галунами, сколько всяких комиссионеров, свистунов-мальчишек и здоровенных оборванцев с пачками цветных открыток в руках кинулось к нему навстречу с предложением услуг! И он ухмылялся этим оборванцам, идя к автомобилю того самого отеля, где мог остановиться и принц, и спокойно говорил сквозь зубы то по-английски, то по-итальянски:</p></div><div class="navrow"><a href="chast-1.html">← Предыдущая часть</a><a href="chast-3.html">Следующая часть →</a></div></main><footer><div class="wrap">И. А. Бунин (1870–1953), «Господин из Сан-Франциско», 1915.<br>Текст по изданию: рассказ написан в Васильевском в 1915 году. Электронное издание — <a href="index.html">UntoldArchive.com</a>. Работает автономно, в любом браузере.</div></footer><script>
+(function(){
+  var body=document.body;
+  function setTheme(t){body.className='';if(t&&t!=='paper')body.classList.add('theme-'+t);
+    document.querySelectorAll('.themes button').forEach(function(b){b.classList.toggle('on',b.dataset.t===t)});
+    try{localStorage.setItem('bunin-theme',t)}catch(e){}}
+  document.querySelectorAll('.themes button').forEach(function(b){b.addEventListener('click',function(){setTheme(b.dataset.t)})});
+  var t='paper';try{t=localStorage.getItem('bunin-theme')||'paper'}catch(e){}setTheme(t);
+  var bar=document.querySelector('.progress');
+  if(bar){function up(){var h=document.documentElement,p=h.scrollTop/(h.scrollHeight-h.clientHeight);bar.style.width=(p*100)+'%'}
+    window.addEventListener('scroll',up);up();}
+  document.querySelectorAll('sup.note').forEach(function(s){
+    var pop=null;
+    function close(){if(pop){pop.remove();pop=null}}
+    s.addEventListener('click',function(e){
+      e.stopPropagation();
+      if(pop){close();return}
+      var r=s.getBoundingClientRect();
+      pop=document.createElement('div');pop.className='pop';
+      pop.innerHTML='<b>Примечание '+s.dataset.note+'</b>'+s.getAttribute('data-text');
+      document.body.appendChild(pop);
+      var top=r.bottom+8+window.scrollY,left=Math.max(10,Math.min(r.left+window.scrollX-60,window.scrollX+document.documentElement.clientWidth-pop.offsetWidth-10));
+      pop.style.top=top+'px';pop.style.left=left+'px';});
+    document.addEventListener('click',close);});
+  if(document.body.dataset.part){try{localStorage.setItem('bunin-last',document.body.dataset.part)}catch(e){}}
+})();
+</script></body></html>

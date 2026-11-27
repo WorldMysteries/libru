@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Часть VI. Смерть в читальне — Господин из Сан-Франциско</title><style>
+:root{--bg:#faf6ee;--card:#fffdf8;--ink:#2b2620;--muted:#7a6f5f;--accent:#8a2b1f;--line:#e5dccc;--shadow:rgba(60,45,20,.12)}
+body.theme-sepia{--bg:#f0e4cf;--card:#f8efdb;--ink:#3a2f22;--muted:#8a7a5f;--accent:#7a3a12;--line:#dcc9a6;--shadow:rgba(80,60,20,.18)}
+body.theme-night{--bg:#14120f;--card:#1d1a16;--ink:#d8cfc0;--muted:#968c7a;--accent:#c98a5a;--line:#332d24;--shadow:rgba(0,0,0,.5)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.7;transition:background .3s,color .3s}
+.wrap{max-width:880px;margin:0 auto;padding:0 1.2rem}
+header.top{border-bottom:1px solid var(--line);background:var(--card)}
+.topbar{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1.2rem;padding:.9rem 0}
+.brand{font-weight:bold;letter-spacing:.05em;font-size:.95rem;text-decoration:none;color:var(--ink)}
+.brand span{color:var(--accent)}
+nav.main{display:flex;gap:1.1rem;flex-wrap:wrap;margin-left:auto}
+nav.main a{color:var(--muted);text-decoration:none;font-size:.9rem}
+nav.main a:hover{color:var(--accent)}
+.themes{display:flex;gap:.4rem;margin-left:auto}
+.themes button{font-family:inherit;font-size:.8rem;padding:.25rem .7rem;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:99px;cursor:pointer}
+.themes button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:50}
+.frontispiece{text-align:center;padding:3.2rem 0 2.2rem;border-bottom:1px solid var(--line)}
+.years{letter-spacing:.35em;font-size:.85rem;color:var(--muted)}
+.frontispiece h1{font-size:clamp(2rem,6vw,3.4rem);font-weight:normal;font-style:italic;margin:.7rem 0 .4rem}
+.author{font-size:1.15rem;letter-spacing:.15em}
+.cover{max-width:270px;width:70%;height:auto;border-radius:4px;box-shadow:0 6px 24px var(--shadow);margin:1.6rem auto 0;display:block}
+.epigraph{max-width:560px;margin:2.4rem auto 0;font-style:italic;color:var(--muted);font-size:1.05rem}
+.epigraph .sig{display:block;text-align:right;margin-top:.6rem;font-style:normal;font-size:.9rem;letter-spacing:.1em}
+.edition{max-width:640px;margin:2.2rem auto;padding:1.3rem 1.6rem;background:var(--card);border:1px solid var(--line);border-radius:6px;font-size:.95rem;color:var(--muted)}
+.actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin:1.8rem 0}
+.btn{display:inline-block;padding:.65rem 1.6rem;border:1px solid var(--accent);color:var(--accent);text-decoration:none;border-radius:99px;font-size:.95rem}
+.btn.primary{background:var(--accent);color:#fff}
+.btn:hover{filter:brightness(1.08)}
+.resume{display:none;text-align:center;color:var(--muted);font-size:.9rem;margin-bottom:1rem}
+.resume a{color:var(--accent)}
+h2.sect{font-weight:normal;font-style:italic;font-size:1.5rem;text-align:center;margin:2.6rem 0 1.4rem}
+.toc{list-style:none;max-width:720px;margin:0 auto 2rem}
+.toc li{margin:0 0 1.1rem}
+.toc a{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1rem 1.3rem;transition:box-shadow .2s}
+.toc a:hover{box-shadow:0 4px 16px var(--shadow)}
+.toc .num{color:var(--accent);font-size:.8rem;letter-spacing:.2em}
+.toc .t{font-size:1.1rem;font-style:italic;margin:.15rem 0 .25rem}
+.toc .d{color:var(--muted);font-size:.9rem;line-height:1.5}
+footer{border-top:1px solid var(--line);margin-top:3rem;padding:1.8rem 0 2.4rem;color:var(--muted);font-size:.85rem;text-align:center}
+footer a{color:var(--accent);text-decoration:none}
+.phead{text-align:center;padding:2.6rem 0 1.4rem}
+.phead .num{letter-spacing:.3em;color:var(--muted);font-size:.85rem}
+.phead h1{font-weight:normal;font-style:italic;font-size:clamp(1.7rem,4.5vw,2.6rem);margin:.5rem 0}
+.prose{max-width:720px;margin:0 auto;font-size:1.08rem}
+.prose p{margin:0 0 1.15em;text-indent:1.6em;text-align:justify;hyphens:auto}
+.prose p:first-of-type{text-indent:0}
+.prose p:last-of-type{text-align:center;color:var(--muted);font-style:italic;margin-top:2.4rem}
+@media(min-width:1100px){.prose{max-width:100%;column-count:2;column-gap:3.2rem;column-rule:1px solid var(--line);font-size:1.02rem}}
+sup.note{font-size:.68em;color:var(--accent);cursor:pointer;margin-left:.15em}
+sup.note::after{content:'[' attr(data-note) ']'}
+.pop{position:absolute;max-width:300px;background:var(--card);border:1px solid var(--line);border-radius:6px;box-shadow:0 8px 28px var(--shadow);padding:.7rem .9rem;font-size:.88rem;color:var(--muted);z-index:60;line-height:1.5}
+.pop b{color:var(--accent);display:block;margin-bottom:.2rem}
+.navrow{display:flex;justify-content:space-between;gap:1rem;max-width:720px;margin:2.8rem auto 0;border-top:1px solid var(--line);padding-top:1.4rem}
+.navrow a{color:var(--accent);text-decoration:none;font-style:italic}
+.navrow a:hover{text-decoration:underline}
+@media(max-width:640px){nav.main{margin-left:0}.prose p{text-align:left}}
+</style></head><body class="" data-part="6"><div class="progress"></div><header class="top"><div class="wrap topbar"><a class="brand" href="index.html">Untold<span>Archive</span> · Бунин</a><nav class="main"><a href="index.html">Титул и оглавление</a><a href="chast-1.html">Читать с начала</a></nav><div class="themes"><button data-t="paper">Бумага</button><button data-t="sepia">Сепия</button><button data-t="night">Ночь</button></div></div></header><div class="phead"><div class="wrap"><div class="num">ЧАСТЬ VI ИЗ VIII</div><h1>Смерть в читальне</h1></div></div><main class="wrap"><div class="prose"><p>– Через пять минут! – звонко и уже весело отозвался из-за двери девичий голос.</p>
+<p>– Отлично, – сказал господин из Сан-Франциско.</p>
+<p>И не спеша пошел по коридорам и по лестницам, устланным красными коврами, вниз, отыскивая читальню. Встречные слуги жались от него к стене, а он шел, как бы не замечая их. Запоздавшая к обеду старуха, уже сутулая, с молочными волосами, но декольтированная, в светло-сером шелковом платье, поспешала изо всех сил, но смешно, по-куриному, и он легко обогнал ее Возле стеклянных дверей столовой, где уже все были в сборе и начали есть, он остановился перед столиком, загроможденным коробками сигар и египетских папирос, взял большую маниллу и кинул на столик три лиры; на зимней веранде мимоходом глянул в открытое окно: из темноты повеяло на него нежным воздухом, померещилась верхушка старой пальмы, раскинувшая по звездам свои вайи, казавшиеся гигантскими, донесся отдаленный ровный шум моря… В читальне, уютной, тихой и светлой только над столами, стоя шуршал газетами какой-то седой немец, похожий на Ибсена, в серебряных круглых очках и с сумасшедшими, изумленными глазами Холодно осмотрев его, господин из Сан-Франциско сел в глубокое кожаное кресло в углу, возле лампы под зеленым колпаком, надел пенсне и, дернув головой от душившего его воротничка, весь закрылся газетным листом. Он быстро пробежал заглавие некоторых статей, прочел несколько строк о никогда не прекращающейся балканской войне, привычным жестом перевернул газету, – как вдруг строчки вспыхнули перед ним стеклянным блеском, шея его напружилась, глаза выпучились, пенсне слетело с носа… Он рванулся вперед, хотел глотнуть воздуха – и дико захрипел; нижняя челюсть его отпала, осветив весь рот золотом пломб, голова завалилась на плечо и замоталась, грудь рубашки выпятилась коробом – и все тело, извиваясь, задирая ковер каблуками, поползло на пол, отчаянно борясь с кем-то.</p>
+<p>Не будь в читальне немца, быстро и ловко сумели бы в гостинице замять это ужасное происшествие, мгновенно, задними ходами, умчали бы за ноги и за голову господина из Сан-Франциско куда подальше – и ни единая душа из гостей не узнала бы, что натворил он. Но немец вырвался из читальни с криком, он всполошил весь дом, всю столовую и многие вскакивали из за еды, опрокидывая стулья, многие, бледнея, бежали к читальне, на всех языках раздавалось:</p>
+<p>«Что, что случилось?» – и никто не отвечал толком, никто не понимал ничего, так как люди и до сих пор еще больше всего дивятся и ни за что не хотят верить смерти. Хозяин метался от одного гостя к другому, пытаясь задержать бегущих и успокоить их поспешными заверениями, что это так, пустяк, маленький обморок с одним господином из Сан-Франциско… Но никто его не слушал, многие видели, как лакеи и коридорные срывали с этого господина галстук, жилет, измятый смокинг и даже зачем-то бальные башмаки с черных шелковых ног с плоскими ступнями. А он еще бился. Он настойчиво боролся со смертью, ни за что не хотел поддаться ей, так. Неожиданно и грубо навалившейся на него. Он мотал головой, хрипел, как зарезанный, закатил глаза, как пьяный… Когда его торопливо внесли и положили на кровать в сорок третий номер, – самый маленький, самый плохой, самый сырой и холодный, в конце нижнего коридора, – прибежала его дочь, с распущенными волосами, в распахнувшемся капотике, с обнаженной грудью, поднятой корсетом, потом большая, тяжелая и уже совсем наряженная к обеду жена, у которой рот был круглый от ужаса… Но тут он уже и головой перестал мотать.</p>
+<p>Через четверть часа в отеле все кое-как пришло в порядок. Но вечер был непоправимо испорчен. Некоторые, возвратясь в столовую, дообедали, но молча, с обиженными лицами, меж тем как хозяин подходил то к тому, то к другому, в бессильном и приличном раздражении пожимая плечами, чувствуя себя без вины виноватым, всех уверяя, что он отлично понимает, «как это неприятно», и давая слово, что он примет «все зависящие от него меры» к устранению неприятности; тарантеллу пришлось отменить, лишнее электричество потушили, большинство гостей ушло в пивную, и стало так тихо, что четко слышался стук часов в вестибюле, где только один попугай деревянно бормотал что-то возясь перед сном в своей клетке, ухитряясь заснуть с нелепо задранной на верхний шесток лапой… Господин из Сан-Франциско лежал на дешевой железной кровати, под грубыми шерстяными одеялами, на которые с потолка тускло светил один рожок. Пузырь со льдом свисал на его мокрый и холодный лоб. Сизое, уже мертвое лицо постепенно стыло, хриплое клокотанье, вырывавшееся из открытого рта, «освещенного отблеском золота, слабело Это хрипел уже не господин из Сан-Франциско, – его больше не было, – а кто-то другой. Жена, дочь, доктор, прислуга стояли и глядели на него. Вдруг то, чего они ждали и боялись, совершилось – хрип оборвался. И медленно, медленно, на глазах у всех, потекла бледность по лицу умершего, и черты его стали утончаться, светлеть, – красотой, уже давно подобавшей ему.</p>
+<p>Вошел хозяин. «Gia e morto» <sup class="note" data-note="7" data-text="Уже умер (итал.).">7</sup>, – сказал ему, шепотом доктор. Хозяин с бесстрастным лицом пожал плечами. Миссис, у которой тихо катились по щекам слезы, подошла к нему и робко сказала, что теперь надо перенести покойного в его комнату.</p>
+<p>– О нет, мадам, – поспешно, корректно, но уже без всякой любезности, и не по-английски, а по-французски возразил хозяин, которому совсем не интересны были те пустяки, что могли оставить теперь в его кассе приезжие из Сан-Франциско. – Это совершенно невозможно, мадам, – сказал он и прибавил в пояснение, что он очень ценит эти апартаменты, что если бы он исполнил ее желание, то всему Капри стало бы известно об этом и туристы начали бы избегать их.</p>
+<p>Мисс, все время странно смотревшая на него, села на стул и, зажав рот платком, зарыдала. У миссис слезы сразу высохли, лицо вспыхнуло Она подняла тон, стала требовать, говоря на своем языке и вое еще не веря, что уважение к ним окончательно потеряно. Хозяин с вежливым достоинством осадил ее: если мадам не нравятся порядки отеля, он не смеет ее задерживать; и твердо заявил, что тело должно быть вывезено сегодня же на рассвете, что полиции уже дано знать, что представитель ее сейчас явится и исполнит необходимые формальности… Можно ли достать на Капри хотя бы простой готовый гроб, спрашивает мадам? К сожалению, нет, ни в каком случае, а сделать никто не успеет. Придется поступить как-нибудь иначе… Содовую английскую воду, например, он получает в больших и длинных ящиках… перегородки из такого ящика можно вынуть…</p></div><div class="navrow"><a href="chast-5.html">← Предыдущая часть</a><a href="chast-7.html">Следующая часть →</a></div></main><footer><div class="wrap">И. А. Бунин (1870–1953), «Господин из Сан-Франциско», 1915.<br>Текст по изданию: рассказ написан в Васильевском в 1915 году. Электронное издание — <a href="index.html">UntoldArchive.com</a>. Работает автономно, в любом браузере.</div></footer><script>
+(function(){
+  var body=document.body;
+  function setTheme(t){body.className='';if(t&&t!=='paper')body.classList.add('theme-'+t);
+    document.querySelectorAll('.themes button').forEach(function(b){b.classList.toggle('on',b.dataset.t===t)});
+    try{localStorage.setItem('bunin-theme',t)}catch(e){}}
+  document.querySelectorAll('.themes button').forEach(function(b){b.addEventListener('click',function(){setTheme(b.dataset.t)})});
+  var t='paper';try{t=localStorage.getItem('bunin-theme')||'paper'}catch(e){}setTheme(t);
+  var bar=document.querySelector('.progress');
+  if(bar){function up(){var h=document.documentElement,p=h.scrollTop/(h.scrollHeight-h.clientHeight);bar.style.width=(p*100)+'%'}
+    window.addEventListener('scroll',up);up();}
+  document.querySelectorAll('sup.note').forEach(function(s){
+    var pop=null;
+    function close(){if(pop){pop.remove();pop=null}}
+    s.addEventListener('click',function(e){
+      e.stopPropagation();
+      if(pop){close();return}
+      var r=s.getBoundingClientRect();
+      pop=document.createElement('div');pop.className='pop';
+      pop.innerHTML='<b>Примечание '+s.dataset.note+'</b>'+s.getAttribute('data-text');
+      document.body.appendChild(pop);
+      var top=r.bottom+8+window.scrollY,left=Math.max(10,Math.min(r.left+window.scrollX-60,window.scrollX+document.documentElement.clientWidth-pop.offsetWidth-10));
+      pop.style.top=top+'px';pop.style.left=left+'px';});
+    document.addEventListener('click',close);});
+  if(document.body.dataset.part){try{localStorage.setItem('bunin-last',document.body.dataset.part)}catch(e){}}
+})();
+</script></body></html>
