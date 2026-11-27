@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Станционный смотритель — Многостраничная HTML-книга</title>
+<meta name="description" content="Повесть Александра Пушкина «Станционный смотритель» полностью: 5 страниц, закладки, заметки, три темы чтения.">
+<link rel="stylesheet" href="css/style.css">
+<script>try{var t=localStorage.getItem('sm-theme');if(t)document.documentElement.setAttribute('data-theme',t);var f=localStorage.getItem('sm-font');if(f)document.documentElement.style.setProperty('--fs',f+'px');}catch(e){}</script>
+</head>
+<body class="home">
+<div class="trim" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<header class="bar">
+  <a class="brand" href="index.html">Станционный смотритель</a>
+  <nav class="links"><a href="index.html#toc">Оглавление</a><a href="geroi.html">Герои и места</a></nav>
+  <div class="tools">
+    <div class="themes" role="group" aria-label="Тема оформления"><button data-set-theme="paper">Бумага</button><button data-set-theme="sepia">Сепия</button><button data-set-theme="night">Ночь</button></div>
+    <div class="fsz" role="group" aria-label="Размер шрифта"><button data-font="-1" aria-label="Меньше">А−</button><button data-font="1" aria-label="Больше">А+</button></div>
+  </div>
+</header>
+
+<main class="home-main">
+<section class="hero">
+  <div class="hero-text">
+    <p class="author">Александр Сергеевич Пушкин</p>
+    <h1>Станционный смотритель</h1>
+    <p class="lead">Полное многостраничное HTML-издание повести на 5 страницах, с закладками, заметками и тремя темами чтения. Работает автономно, без интернета.</p>
+    <blockquote><p>«Кто не проклинал станционных смотрителей, кто с ними не бранивался?»</p><cite>А. С. Пушкин. «Станционный смотритель», первая фраза</cite></blockquote>
+    <p class="cta"><a class="btn main" href="chast-1.html">Начать чтение →</a> <a class="btn" href="#toc">Оглавление</a> <a class="btn" href="geroi.html">Герои и места</a> <a class="btn resume" id="resume" href="#" hidden>Продолжить</a></p>
+  </div>
+</section>
+<section class="mine" id="mine" hidden><h2>Ваши закладки и заметки</h2><ul id="mine-list"></ul></section>
+<section class="toc" id="toc"><h2>Оглавление <small>(5 страниц)</small></h2><section class="tocpart"><ol><li><a href="chast-1.html"><span class="tl">1 <em>из 5</em></span><span class="tt">О станционных смотрителях</span><span class="ts">Почтовый тракт</span></a></li><li><a href="chast-2.html"><span class="tl">2 <em>из 5</em></span><span class="tt">Дуня</span><span class="ts">Почтовая станция</span></a></li><li><a href="chast-3.html"><span class="tl">3 <em>из 5</em></span><span class="tt">Рассказ смотрителя</span><span class="ts">Почтовая станция</span></a></li><li><a href="chast-4.html"><span class="tl">4 <em>из 5</em></span><span class="tt">В Петербурге</span><span class="ts">Петербург</span></a></li><li><a href="chast-5.html"><span class="tl">5 <em>из 5</em></span><span class="tt">Могила</span><span class="ts">Село Н.</span></a></li></ol></section></section>
+<p class="srcnote">В источнике повесть шла сплошным текстом без абзацев, поэтому абзацы и деление на 5 страниц расставлены по смыслу и условны. Слова автора не менялись. Пушкин умер в 1837 году, и произведение находится в общественном достоянии.</p>
+</main>
+<footer class="foot">
+  <p>Александр Сергеевич Пушкин · «Станционный смотритель» · 1830</p>
+  <p><a href="index.html">Оглавление</a> · <a href="chast-1.html">Первая страница</a> · <a href="geroi.html">Герои и места</a></p>
+</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
