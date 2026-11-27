@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Обломов — Многостраничная HTML-книга</title>
+<meta name="description" content="Роман Ивана Гончарова «Обломов» полностью: 4 части, 46 глав, 18 страниц, закладки, заметки, три темы чтения.">
+<link rel="stylesheet" href="css/style.css">
+<script>try{var t=localStorage.getItem('obl-theme');if(t)document.documentElement.setAttribute('data-theme',t);var f=localStorage.getItem('obl-font');if(f)document.documentElement.style.setProperty('--fs',f+'px');}catch(e){}</script>
+</head>
+<body class="home">
+<div class="trim" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<header class="bar">
+  <a class="brand" href="index.html">Обломов</a>
+  <nav class="links">
+    <a href="index.html#toc">Оглавление</a>
+    <a href="geroi.html">Герои и места</a>
+  </nav>
+  <div class="tools">
+    <div class="themes" role="group" aria-label="Тема оформления">
+      <button data-set-theme="paper">Бумага</button>
+      <button data-set-theme="sepia">Сепия</button>
+      <button data-set-theme="night">Ночь</button>
+    </div>
+    <div class="fsz" role="group" aria-label="Размер шрифта">
+      <button data-font="-1" aria-label="Меньше">А−</button>
+      <button data-font="1" aria-label="Больше">А+</button>
+    </div>
+  </div>
+</header>
+
+<main class="home-main">
+<section class="hero">
+  <div class="hero-text">
+    <p class="author">Иван Александрович Гончаров</p>
+    <h1>Обломов</h1>
+    <p class="lead">Полное многостраничное HTML-издание: весь роман (4 части, 46 глав) на 18 страницах, с закладками, заметками и тремя темами чтения. Работает автономно, без интернета.</p>
+    <blockquote><p>«Лежанье у Ильи Ильича не было ни необходимостью, как у больного или как у человека, который хочет спать, ни случайностью, как у того, кто устал, ни наслаждением, как у лентяя: это было его нормальным состоянием.»</p><cite>И. А. Гончаров. «Обломов», часть первая</cite></blockquote>
+    <p class="cta"><a class="btn main" href="chast-1-01.html">Начать чтение →</a> <a class="btn" href="#toc">Оглавление</a> <a class="btn" href="geroi.html">Герои и места</a> <a class="btn resume" id="resume" href="#" hidden>Продолжить</a></p>
+  </div>
+  <figure class="hero-fig"><img src="images/cover.jpg" alt="Обложка романа «Обломов»" width="200" height="328"><figcaption>Первое издание: «Отечественные записки», 1859</figcaption></figure>
+</section>
+<section class="mine" id="mine" hidden>
+  <h2>Ваши закладки и заметки</h2>
+  <ul id="mine-list"></ul>
+</section>
+<section class="toc" id="toc">
+  <h2>Оглавление <small>(18 страниц)</small></h2>
+  <section class="tocpart" id="part-1"><h3>Часть первая</h3><ol>
+<li><a href="chast-1-01.html"><span class="tl">I–II <em>главы</em></span><span class="tt">Утро на Гороховой</span><span class="ts">Гороховая улица, Петербург</span></a></li>
+<li><a href="chast-1-02.html"><span class="tl">III–VI <em>главы</em></span><span class="tt">Земляк Тарантьев и жизнь Обломова</span><span class="ts">Квартира Обломова</span></a></li>
+<li><a href="chast-1-03.html"><span class="tl">VII–VIII <em>главы</em></span><span class="tt">Захар и барин</span><span class="ts">Квартира Обломова</span></a></li>
+<li><a href="chast-1-04.html"><span class="tl">IX <em>главы</em></span><span class="tt">Сон Обломова</span><span class="ts">Обломовка</span></a></li>
+<li><a href="chast-1-05.html"><span class="tl">X–XI <em>главы</em></span><span class="tt">Послеобеденный сон</span><span class="ts">Квартира Обломова</span></a></li>
+</ol></section>
+<section class="tocpart" id="part-2"><h3>Часть вторая</h3><ol>
+<li><a href="chast-2-01.html"><span class="tl">I–III <em>главы</em></span><span class="tt">Штольц: детство и дружба</span><span class="ts">Петербург</span></a></li>
+<li><a href="chast-2-02.html"><span class="tl">IV–V <em>главы</em></span><span class="tt">Штольц везёт Обломова в свет</span><span class="ts">Петербург</span></a></li>
+<li><a href="chast-2-03.html"><span class="tl">VI–VIII <em>главы</em></span><span class="tt">Сирень в Парголове</span><span class="ts">Парголово</span></a></li>
+<li><a href="chast-2-04.html"><span class="tl">IX–X <em>главы</em></span><span class="tt">Любовь и сомнения</span><span class="ts">Парголово · Петербург</span></a></li>
+<li><a href="chast-2-05.html"><span class="tl">XI–XII <em>главы</em></span><span class="tt">Объяснение</span><span class="ts">Парголово</span></a></li>
+</ol></section>
+<section class="tocpart" id="part-3"><h3>Часть третья</h3><ol>
+<li><a href="chast-3-01.html"><span class="tl">I–III <em>главы</em></span><span class="tt">Тарантьев и осень на дачах</span><span class="ts">Парголово · Выборгская сторона</span></a></li>
+<li><a href="chast-3-02.html"><span class="tl">IV–VI <em>главы</em></span><span class="tt">Квартира у вдовы Пшеницыной</span><span class="ts">Выборгская сторона</span></a></li>
+<li><a href="chast-3-03.html"><span class="tl">VII–XII <em>главы</em></span><span class="tt">Мосты, перчатка и братец</span><span class="ts">Петербург · Выборгская сторона</span></a></li>
+</ol></section>
+<section class="tocpart" id="part-4"><h3>Часть четвёртая</h3><ol>
+<li><a href="chast-4-01.html"><span class="tl">I–III <em>главы</em></span><span class="tt">Год спустя</span><span class="ts">Выборгская сторона</span></a></li>
+<li><a href="chast-4-02.html"><span class="tl">IV <em>главы</em></span><span class="tt">Ольга и Штольц</span><span class="ts">Швейцария · Париж</span></a></li>
+<li><a href="chast-4-03.html"><span class="tl">V–VII <em>главы</em></span><span class="tt">Дом на Выборгской</span><span class="ts">Выборгская сторона</span></a></li>
+<li><a href="chast-4-04.html"><span class="tl">VIII <em>главы</em></span><span class="tt">Годы спустя</span><span class="ts">Имение Ольги</span></a></li>
+<li><a href="chast-4-05.html"><span class="tl">IX–XI <em>главы</em></span><span class="tt">Мир и тишина</span><span class="ts">Выборгская сторона</span></a></li>
+</ol></section>
+</section>
+<p class="srcnote">Текст романа: электронное издание на основе общедоступной версии. Роман вышел в 1859 году, и его текст находится в общественном достоянии.</p>
+</main>
+
+<footer class="foot">
+  <p>Иван Александрович Гончаров · «Обломов» · 1859</p>
+  <p><a href="/">Оглавление</a> · <a href="chast-1-01.html">Первая глава</a> · <a href="geroi.html">Герои и места</a></p>
+</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
